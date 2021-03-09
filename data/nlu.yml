@@ -89,6 +89,7 @@ nlu:
     - so saad
     - so sad
     - buồn quá
+    - bored
 - intent: bot_challenge
   examples: |
     - are you a bot?
