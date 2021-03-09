@@ -88,6 +88,7 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+    - buồn quá
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -343,7 +344,6 @@ nlu:
     - tên là [nguyễn quý hiếu](name)
     - tên [trần hán hiếu](name)
     - [lê đức thắng](name)
-    - [lê đức thắng](name)
 - intent: ask_service_name
   examples: |
     - có những dịch vụ gì nhỉ
@@ -453,41 +453,3 @@ nlu:
 - regex: others_person_cmnd
   examples: |
     - \d{10,12}
-- lookup: currency_from
-  examples: |
-    - đô
-    - đô la
-    - đô la mỹ
-    - $
-    - yên
-    - yên nhật
-    - bảng
-    - bảng anh
-    - nhân dân tệ
-    - cny
-    - usd
-    - gbp
-    - eur
-    - euro
-    - €
-    - tiền việt
-    - vnd
-- lookup: currency_to
-  examples: |
-    - đô
-    - đô la
-    - đô la mỹ
-    - $
-    - yên
-    - yên nhật
-    - bảng
-    - bảng anh
-    - nhân dân tệ
-    - cny
-    - usd
-    - gbp
-    - eur
-    - euro
-    - €
-    - tiền việt
-    - vnd
