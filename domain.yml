@@ -1,0 +1,313 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 20
+  carry_over_slots_to_new_session: false
+intents:
+- cust_give_name_all
+- cust_give_cmnd_all
+- cust_sign_in
+- check_balance_account
+- ask_service_name:
+    use_entities: []
+- cust_give_account_number_all
+- loan_money
+- check_loan_max
+- deny
+- cust_create_account_for_themselvess
+- ask_exchange_rate
+- cust_create_account_for_others_person
+- affirm
+- create_account
+- greet
+- goodbye
+- mood_great
+- mood_unhappy
+- bot_challenge
+- hello_word
+- out_of_scope
+- transfer_to_account
+- affirm_has_account
+- does_not_have_account
+- ask_time
+- thankyou
+- ask_bot_name
+- stop:
+    use_entities: []
+entities:
+- account
+- cmnd
+- currency
+- currency_from
+- currency_to
+- cust_account_number
+- cust_cmnd
+- cust_name
+- cust_sex
+- cust_transfer_account_money
+- cust_transfer_account_number
+- login
+- money_enough
+- name
+- number
+- numeral
+- other_person_cmnd
+- others_person_cmnd
+- others_person_name
+- others_person_sex
+- service_name
+- time
+slots:
+  login:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+  account:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+  money_enough:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+  currency:
+    type: text
+    auto_fill: false
+    influence_conversation: true
+  currency_from:
+    type: text
+    initial_value: usd
+    influence_conversation: true
+  currency_to:
+    type: text
+    initial_value: vnd
+    influence_conversation: true
+  number:
+    type: text
+    initial_value: 1
+    influence_conversation: false
+  time:
+    type: any
+    influence_conversation: false
+  service_name:
+    type: text
+    influence_conversation: true
+  cust_name:
+    type: text
+    influence_conversation: true
+  cust_sex:
+    type: text
+    initial_value: Quý khách
+    influence_conversation: true
+  cust_cmnd:
+    type: text
+    influence_conversation: true
+  cust_account_number:
+    type: text
+    influence_conversation: true
+  name:
+    type: text
+    influence_conversation: true
+  cmnd:
+    type: text
+    influence_conversation: true
+  cust_transfer_account_number:
+    type: text
+    influence_conversation: true
+  others_person_name:
+    type: text
+    influence_conversation: false
+  others_person_cmnd:
+    type: text
+    influence_conversation: false
+  others_person_sex:
+    type: text
+    initial_value: người đấy
+    influence_conversation: false
+  cust_transfer_account_money:
+    type: text
+    influence_conversation: true
+  requested_slot:
+    type: unfeaturized
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Xin chào quý khách.Bên em có thể giúp gì cho quý khách ạ?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Tạm biệt quý khách.
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_ask_others_person_name:
+  - text: Tên của chủ tài khoản là gì ạ ?
+  utter_ask_others_person_cmnd:
+  - text: Số cmnd của chủ tài khoản là gì ạ ?
+  utter_ask_cust_account_number:
+  - text: Số tài khoản của chủ tài khoản là gì ạ ?
+  utter_ask_cust_cmnd:
+  - text: số cmnd của chủ tài khoản là gì ạ ?
+  utter_ask_name:
+  - text: Tên của chủ tài khoản là gì ạ ?
+  utter_ask_cmnd:
+  - text: Số cmnd của chủ tài khoản là gì ạ ?
+  utter_ask_cust_name:
+  - text: Tên của chủ tài khoản là gì ạ ?
+  utter_ask_cust_transfer_account_number:
+  - text: số tài khoản của người chuyển khoản cho là gì ạ ?
+  utter_fallback:
+  - text: xin lỗi {cust_sex}.{cust_sex} có thể đặt lại câu hỏi khác được không ạ.
+  utter_submit:
+  - text: Được rồi {cust_sex} ạ
+  utter_cust_stop_create_account:
+  - text: '{cust_sex} đã dừng lập tài khoản.'
+  utter_give_account_info:
+  - text: 'Tên chủ tài khoản là {cust_name}.Số CMND : {cust_cmnd} '
+  utter_ask_cust_loan_number:
+  - text: '{cust_sex} muốn vay bao nhiêu tiền ạ.'
+  utter_ask_if_cust_has_account:
+  - text: '{cust_sex} có tài khoản chưa ạ.'
+    buttons:
+    - title: '{cust_sex} có tài khoản rồi'
+      payload: /affirm_has_account
+    - title: '{cust_sex} chưa có tài khoản'
+      payload: /does_not_have_account
+  utter_ask_if_cust_want_to_do_anything_else:
+  - text: '{cust_sex} muốn làm gì tiếp ạ.'
+  utter_ask_if_cust_want_to_sign_in:
+  - text: '{cust_sex} cần đăng nhập tài khoản để thực hiện dịch vụ này. {cust_sex} có muốn đăng nhập tài khoản ko ạ.'
+    buttons:
+    - title: '{cust_sex} muốn đăng nhập tài khoản'
+      payload: /cust_sign_in
+    - title: Không
+      payload: /deny
+  utter_ask_cust_transfer_account_money:
+  - text: '{cust_sex} muốn chuyển khoản bao nhiêu ạ.'
+  utter_wrong_transfer_account:
+  - text: Tài khoản này không tồn tại. {cust_sex} có muốn nhập lại thông tin tài khoản ko ạ
+    buttons:
+    - title: '{cust_sex} muốn nhập lại thông tin tài khoản'
+      payload: /affrim
+    - title: Không
+      payload: /deny
+  utter_cust_sign_in_false:
+  - text: '{cust_sex} đã nhập sai tài khoản.Quý khách có muốn đăng nhập lại ko ạ'
+    buttons:
+    - title: '{cust_sex} muốn đăng nhập tài khoản'
+      payload: /cust_sign_in
+    - title: Không
+      payload: /deny
+  utter_cust_sign_in_success:
+  - text: '{cust_sex} đã đăng nhập thành công.'
+  utter_out_of_scope:
+  - text: xin lỗi {cust_sex}.{cust_sex} có thể đặt lại câu hỏi liên quan đến dịch vụ được ko ạ.
+  utter_out_of_form:
+  - text: xin lỗi {cust_sex}.{cust_sex} có thể trả lời câu hỏi của form được ko ạ.
+  utter_feedback_time:
+  - text: bây giờ là {time}.
+  utter_ask_cust_to_verify_others_person_account:
+  - text: 'Mời xác nhận thông tin chủ tài khoản. \n Tên : {name} \n Số cmnd : {cmnd} \n {cust_sex} có muốn tiếp tục không ?'
+    buttons:
+    - title: Có
+      payload: /affirm
+    - title: Không
+      payload: /deny
+  utter_ask_cust_to_verify_account:
+  - text: 'Mời xác nhận thông tin chủ tài khoản. \n Tên : {name} \n Số cmnd : {cmnd} \n {cust_sex} có muốn tiếp tục không ?'
+    buttons:
+    - title: Có
+      payload: /affirm
+    - title: Không
+      payload: /deny
+  utter_ask_if_cust_want_to_create_account_again:
+  - text: '{cust_sex} có muốn tạo lại tài khoản không ạ ?'
+    buttons:
+    - title: Có
+      payload: /affirm
+    - title: Không
+      payload: /deny
+  utter_ask_who_cust_create_account_for:
+  - text: '{cust_sex} muốn tạo tài khoản cho ai ạ ? {cust_sex} vui lòng chọn 1 trong 2 trường hợp sau ạ'
+    buttons:
+    - title: '{cust_sex} muốn tạo tài khoản cho bản thân'
+      payload: /cust_create_account_for_themselvess
+    - title: '{cust_sex} muốn tạo tài khoản cho người khác'
+      payload: /cust_create_account_for_others_person
+actions:
+- action_check_account
+- action_check_balance
+- action_check_loan_max
+- action_check_login
+- action_create_account
+- action_create_account_for_others_person_submit
+- action_create_account_submit
+- action_exchange_rate
+- action_hello_world
+- action_list_service_name
+- action_login
+- action_reset_account
+- action_reset_cmnd
+- action_reset_name
+- action_set_account_number
+- action_set_cmnd
+- action_set_name
+- utter_ask_cust_account_number
+- utter_ask_cust_to_verify_account
+- utter_ask_cust_to_verify_others_person_account
+- utter_ask_if_cust_want_to_do_anything_else
+- utter_ask_if_cust_want_to_sign_in
+- utter_ask_others_person_cmnd
+- utter_ask_who_cust_create_account_for
+- utter_cust_sign_in_false
+- utter_cust_sign_in_success
+- validate_cust_create_account
+- validate_cust_sign_in
+forms:
+  cust_create_account:
+    name:
+    - entity: name
+      type: from_entity
+      intent: cust_give_name_all
+    cmnd:
+    - entity: cmnd
+      type: from_entity
+      intent: cust_give_cmnd_all
+  cust_create_account_for_others_person:
+    name:
+    - entity: name
+      type: from_entity
+      intent: cust_give_name_all
+    cmnd:
+    - entity: cmnd
+      type: from_entity
+      intent: cust_give_cmnd_all
+  cust_sign_in:
+    name:
+    - entity: name
+      type: from_entity
+      intent: cust_give_name_all
+    cmnd:
+    - entity: cmnd
+      type: from_entity
+      intent: cust_give_cmnd_all
+    cust_account_number:
+    - entity: cust_account_number
+      type: from_entity
+      intent: cust_give_account_number_all
+  cust_transfer_account:
+    name:
+    - entity: name
+      type: from_entity
+      intent: cust_give_name_all
+    cmnd:
+    - entity: cmnd
+      type: from_entity
+      intent: cust_give_cmnd_all
+    cust_transfer_account_money:
+    - entity: cust_transfer_account_money
+      type: from_entity
+      intent: cust_give_cust_transfer_account_money
