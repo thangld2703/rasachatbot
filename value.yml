@@ -1,0 +1,4 @@
+# app (custom action server) specific settings
+app:
+    # name of the custom action server image to use
+    name: "thangld2703/rasachatbot"
