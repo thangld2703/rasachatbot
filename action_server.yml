@@ -14,10 +14,10 @@ jobs:
 
     - id: action_server
       name: Build an action server with a custom actions
-      uses: RasaHQ/action-server-gha@master
+      uses: thangld2703/rasachatbot@master
       # Full list of parameters: https://github.com/RasaHQ/action-server-gha/tree/main#input-arguments
       with:
-        docker_image_name: 'thangld2703/action-server'
+        docker_image_name: 'thangld2703/rasachatbot'
         docker_registry_login: ${{ secrets.DOCKER_HUB_LOGIN }}
         docker_registry_password: ${{ secrets.DOCKER_HUB_PASSWORD }}
         # More details about github context:
