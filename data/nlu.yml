@@ -363,6 +363,7 @@ nlu:
     - cho [bác](cust_sex) xem danh sách dịch vụ
     - cho [cô](cust_sex) xem danh sách dịch vụ
     - có những dịch vụ gì
+    - cho tôi xem dịch vụ
 - intent: ask_bot_name
   examples: |
     - bạn tên là gì?
