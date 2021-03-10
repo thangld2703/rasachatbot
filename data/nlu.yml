@@ -65,6 +65,7 @@ nlu:
     - don't like that
     - no way
     - not really
+    - khong
 - intent: mood_great
   examples: |
     - perfect
@@ -233,6 +234,7 @@ nlu:
     - I want to order food
     - 2 + 2 bằng bao nhiêu
     - Who's the US President?
+    - em bao nhiểu tuổi
 - intent: ask_time
   examples: |
     - bây giờ là mấy giờ ?
