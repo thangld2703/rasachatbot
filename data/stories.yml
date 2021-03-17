@@ -43,6 +43,27 @@ stories:
   - active_loop: null
   - action: utter_ask_cust_to_verify_account
   - checkpoint: check_cust_finished_create_account
+- story: đăng ký 1
+  steps:
+  - intent: create_account
+  - action: utter_ask_who_cust_create_account_for
+  - intent: cust_create_account_for_themselvess
+  - action: action_reset_account
+  - action: cust_create_account
+  - active_loop: cust_create_account
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: Lê Đức thắng
+  - slot_was_set:
+    - requested_slot: cmnd
+  - slot_was_set:
+    - cmnd: 976734190
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_cust_to_verify_account
+  - checkpoint: check_cust_finished_create_account
 - story: customers create accounts for others
   steps:
   - intent: create_account
@@ -682,8 +703,6 @@ stories:
   - intent: cust_give_account_number_all
     entities:
     - cust_account_number: '094352798'
-  - slot_was_set:
-    - cust_account_number: '094352798'
   - action: utter_greet
 
 - story: interactive_story_1
@@ -749,32 +768,11 @@ stories:
   - intent: stop
   - action: utter_happy
 
-- story: interactive_story_1
-  steps:
-  - intent: cust_give_cmnd_all
-    entities:
-    - cust_account_number: '123456789'
-  - slot_was_set:
-    - cust_account_number: '123456789'
-
 - story: interactive_story_2
   steps:
   - intent: cust_give_cmnd_all
     entities:
     - cust_account_number: '123456789'
-  - slot_was_set:
-    - cust_account_number: '123456789'
-  - action: utter_greet
-  - slot_was_set:
-    - cust_name: null
-  - slot_was_set:
-    - cust_cmnd: null
-  - slot_was_set:
-    - cust_account_number: null
-  - slot_was_set:
-    - name: null
-  - slot_was_set:
-    - cmnd: null
   - action: utter_greet
 
 - story: interactive_story_1
