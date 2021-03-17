@@ -3,21 +3,26 @@ session_config:
   session_expiration_time: 20
   carry_over_slots_to_new_session: false
 intents:
-- cust_give_name_all
-- cust_give_cmnd_all
-- cust_sign_in
-- check_balance_account
+- ask_phone_number
+- ask_address
+- deny
+- nlu_fallback
+- create_account
 - ask_service_name:
     use_entities: []
+- cust_give_name_all
 - cust_give_account_number_all
+- cust_give_cmnd_all
+- stop:
+    use_entities: []
+- cust_create_account_for_themselvess
+- check_balance_account
+- cust_sign_in
 - loan_money
 - check_loan_max
-- deny
-- cust_create_account_for_themselvess
 - ask_exchange_rate
 - cust_create_account_for_others_person
 - affirm
-- create_account
 - greet
 - goodbye
 - mood_great
@@ -31,8 +36,9 @@ intents:
 - ask_time
 - thankyou
 - ask_bot_name
-- stop:
-    use_entities: []
+- cust_give_others_person_name
+- cust_give_cust_transfer_account_money
+- cust_ending
 entities:
 - account
 - cmnd
@@ -138,11 +144,15 @@ responses:
   utter_did_that_help:
   - text: Did that help you?
   utter_happy:
-  - text: Great, carry on!
+  - text: Rất vui được phục vụ quý khách!
   utter_goodbye:
   - text: Tạm biệt quý khách.
   utter_iamabot:
-  - text: I am a bot, powered by Rasa.
+  - text: Tôi là nhân viên của ngân hàng, rất vui được phục vụ quý khách.
+  utter_phone_number:
+  - text: Quý khách có thể liên lạc tới số điện thoại 0 24 3941 8868 hoặc gọi tới tổng đài 1900 558 868
+  utter_show_address:
+  - text: Gửi quý khách địa chỉ chi nhánh Tầng 2 Trung Yên Plaza
   utter_ask_others_person_name:
   - text: Tên của chủ tài khoản là gì ạ ?
   utter_ask_others_person_cmnd:
@@ -170,37 +180,37 @@ responses:
   utter_ask_cust_loan_number:
   - text: '{cust_sex} muốn vay bao nhiêu tiền ạ.'
   utter_ask_if_cust_has_account:
-  - text: '{cust_sex} có tài khoản chưa ạ.'
-    buttons:
-    - title: '{cust_sex} có tài khoản rồi'
-      payload: /affirm_has_account
-    - title: '{cust_sex} chưa có tài khoản'
-      payload: /does_not_have_account
+  - buttons:
+    - payload: /affirm_has_account
+      title: '{cust_sex} có tài khoản rồi'
+    - payload: /does_not_have_account
+      title: '{cust_sex} chưa có tài khoản'
+    text: '{cust_sex} có tài khoản chưa ạ.'
   utter_ask_if_cust_want_to_do_anything_else:
   - text: '{cust_sex} muốn làm gì tiếp ạ.'
   utter_ask_if_cust_want_to_sign_in:
-  - text: '{cust_sex} cần đăng nhập tài khoản để thực hiện dịch vụ này. {cust_sex} có muốn đăng nhập tài khoản ko ạ.'
-    buttons:
-    - title: '{cust_sex} muốn đăng nhập tài khoản'
-      payload: /cust_sign_in
-    - title: Không
-      payload: /deny
+  - buttons:
+    - payload: /cust_sign_in
+      title: '{cust_sex} muốn đăng nhập tài khoản'
+    - payload: /deny
+      title: Không
+    text: '{cust_sex} cần đăng nhập tài khoản để thực hiện dịch vụ này. {cust_sex} có muốn đăng nhập tài khoản ko ạ.'
   utter_ask_cust_transfer_account_money:
   - text: '{cust_sex} muốn chuyển khoản bao nhiêu ạ.'
   utter_wrong_transfer_account:
-  - text: Tài khoản này không tồn tại. {cust_sex} có muốn nhập lại thông tin tài khoản ko ạ
-    buttons:
-    - title: '{cust_sex} muốn nhập lại thông tin tài khoản'
-      payload: /affrim
-    - title: Không
-      payload: /deny
+  - buttons:
+    - payload: /affrim
+      title: '{cust_sex} muốn nhập lại thông tin tài khoản'
+    - payload: /deny
+      title: Không
+    text: Tài khoản này không tồn tại. {cust_sex} có muốn nhập lại thông tin tài khoản ko ạ
   utter_cust_sign_in_false:
-  - text: '{cust_sex} đã nhập sai tài khoản.Quý khách có muốn đăng nhập lại ko ạ'
-    buttons:
-    - title: '{cust_sex} muốn đăng nhập tài khoản'
-      payload: /cust_sign_in
-    - title: Không
-      payload: /deny
+  - buttons:
+    - payload: /cust_sign_in
+      title: '{cust_sex} muốn đăng nhập tài khoản'
+    - payload: /deny
+      title: Không
+    text: '{cust_sex} đã nhập sai tài khoản.Quý khách có muốn đăng nhập lại ko ạ'
   utter_cust_sign_in_success:
   - text: '{cust_sex} đã đăng nhập thành công.'
   utter_out_of_scope:
@@ -210,33 +220,33 @@ responses:
   utter_feedback_time:
   - text: bây giờ là {time}.
   utter_ask_cust_to_verify_others_person_account:
-  - text: 'Mời xác nhận thông tin chủ tài khoản. \n Tên : {name} \n Số cmnd : {cmnd} \n {cust_sex} có muốn tiếp tục không ?'
-    buttons:
-    - title: Có
-      payload: /affirm
-    - title: Không
-      payload: /deny
+  - buttons:
+    - payload: /affirm
+      title: Có
+    - payload: /deny
+      title: Không
+    text: 'Mời xác nhận thông tin chủ tài khoản. \n Tên : {name} \n Số cmnd : {cmnd} \n {cust_sex} có muốn tiếp tục không ?'
   utter_ask_cust_to_verify_account:
-  - text: 'Mời xác nhận thông tin chủ tài khoản. \n Tên : {name} \n Số cmnd : {cmnd} \n {cust_sex} có muốn tiếp tục không ?'
-    buttons:
-    - title: Có
-      payload: /affirm
-    - title: Không
-      payload: /deny
+  - buttons:
+    - payload: /affirm
+      title: Có
+    - payload: /deny
+      title: Không
+    text: 'Mời xác nhận thông tin chủ tài khoản. \n Tên : {name} \n Số cmnd : {cmnd} \n {cust_sex} có muốn tiếp tục không ?'
   utter_ask_if_cust_want_to_create_account_again:
-  - text: '{cust_sex} có muốn tạo lại tài khoản không ạ ?'
-    buttons:
-    - title: Có
-      payload: /affirm
-    - title: Không
-      payload: /deny
+  - buttons:
+    - payload: /affirm
+      title: Có
+    - payload: /deny
+      title: Không
+    text: '{cust_sex} có muốn tạo lại tài khoản không ạ ?'
   utter_ask_who_cust_create_account_for:
-  - text: '{cust_sex} muốn tạo tài khoản cho ai ạ ? {cust_sex} vui lòng chọn 1 trong 2 trường hợp sau ạ'
-    buttons:
-    - title: '{cust_sex} muốn tạo tài khoản cho bản thân'
-      payload: /cust_create_account_for_themselvess
-    - title: '{cust_sex} muốn tạo tài khoản cho người khác'
-      payload: /cust_create_account_for_others_person
+  - buttons:
+    - payload: /cust_create_account_for_themselvess
+      title: '{cust_sex} muốn tạo tài khoản cho bản thân'
+    - payload: /cust_create_account_for_others_person
+      title: '{cust_sex} muốn tạo tài khoản cho người khác'
+    text: '{cust_sex} muốn tạo tài khoản cho ai ạ ? {cust_sex} vui lòng chọn 1 trong 2 trường hợp sau ạ'
 actions:
 - action_check_account
 - action_check_balance
@@ -264,50 +274,55 @@ actions:
 - utter_ask_who_cust_create_account_for
 - utter_cust_sign_in_false
 - utter_cust_sign_in_success
+- utter_cust_stop_create_account
+- utter_happy
+- utter_phone_number
+- utter_show_address
 - validate_cust_create_account
 - validate_cust_sign_in
 forms:
   cust_create_account:
     name:
     - entity: name
-      type: from_entity
       intent: cust_give_name_all
+      type: from_entity
     cmnd:
     - entity: cmnd
-      type: from_entity
       intent: cust_give_cmnd_all
+      type: from_entity
+        not_intent: cust_give_account_number_all
   cust_create_account_for_others_person:
     name:
     - entity: name
-      type: from_entity
       intent: cust_give_name_all
+      type: from_entity
     cmnd:
     - entity: cmnd
-      type: from_entity
       intent: cust_give_cmnd_all
+      type: from_entity
   cust_sign_in:
     name:
     - entity: name
-      type: from_entity
       intent: cust_give_name_all
+      type: from_entity
     cmnd:
     - entity: cmnd
-      type: from_entity
       intent: cust_give_cmnd_all
+      type: from_entity
     cust_account_number:
     - entity: cust_account_number
-      type: from_entity
       intent: cust_give_account_number_all
+      type: from_entity
   cust_transfer_account:
     name:
     - entity: name
-      type: from_entity
       intent: cust_give_name_all
+      type: from_entity
     cmnd:
     - entity: cmnd
-      type: from_entity
       intent: cust_give_cmnd_all
+      type: from_entity
     cust_transfer_account_money:
     - entity: cust_transfer_account_money
-      type: from_entity
       intent: cust_give_cust_transfer_account_money
+      type: from_entity

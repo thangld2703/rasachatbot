@@ -1,0 +1,226 @@
+{
+  "loan_money": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "ask_bot_name": {
+    "precision": 0.9230769230769231,
+    "recall": 1.0,
+    "f1-score": 0.9600000000000001,
+    "support": 12,
+    "confused_with": {}
+  },
+  "greet": {
+    "precision": 0.65,
+    "recall": 0.6842105263157895,
+    "f1-score": 0.6666666666666667,
+    "support": 19,
+    "confused_with": {
+      "ask_service_name": 3,
+      "mood_unhappy": 1
+    }
+  },
+  "does_not_have_account": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "ask_service_name": {
+    "precision": 0.88,
+    "recall": 1.0,
+    "f1-score": 0.9361702127659575,
+    "support": 22,
+    "confused_with": {}
+  },
+  "create_account": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 21,
+    "confused_with": {}
+  },
+  "out_of_scope": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 5,
+    "confused_with": {
+      "ask_exchange_rate": 2,
+      "greet": 2,
+      "bot_challenge": 1
+    }
+  },
+  "goodbye": {
+    "precision": 0.5833333333333334,
+    "recall": 0.6363636363636364,
+    "f1-score": 0.6086956521739131,
+    "support": 11,
+    "confused_with": {
+      "greet": 2,
+      "affirm": 1
+    }
+  },
+  "cust_give_name_all": {
+    "precision": 0.9814814814814815,
+    "recall": 1.0,
+    "f1-score": 0.9906542056074767,
+    "support": 53,
+    "confused_with": {}
+  },
+  "cust_give_account_number_all": {
+    "precision": 0.9047619047619048,
+    "recall": 1.0,
+    "f1-score": 0.9500000000000001,
+    "support": 19,
+    "confused_with": {}
+  },
+  "cust_create_account_for_others_person": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "affirm": {
+    "precision": 0.125,
+    "recall": 0.1,
+    "f1-score": 0.11111111111111112,
+    "support": 10,
+    "confused_with": {
+      "goodbye": 3,
+      "deny": 2
+    }
+  },
+  "check_balance_account": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 27,
+    "confused_with": {}
+  },
+  "affirm_has_account": {
+    "precision": 0.875,
+    "recall": 1.0,
+    "f1-score": 0.9333333333333333,
+    "support": 7,
+    "confused_with": {}
+  },
+  "cust_give_cust_transfer_account_money": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "thankyou": {
+    "precision": 0.9090909090909091,
+    "recall": 0.9090909090909091,
+    "f1-score": 0.9090909090909091,
+    "support": 11,
+    "confused_with": {
+      "mood_unhappy": 1
+    }
+  },
+  "bot_challenge": {
+    "precision": 0.8,
+    "recall": 0.8,
+    "f1-score": 0.8000000000000002,
+    "support": 5,
+    "confused_with": {
+      "ask_bot_name": 1
+    }
+  },
+  "mood_unhappy": {
+    "precision": 0.6875,
+    "recall": 0.6875,
+    "f1-score": 0.6875,
+    "support": 16,
+    "confused_with": {
+      "affirm": 2,
+      "greet": 1
+    }
+  },
+  "mood_great": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 5,
+    "confused_with": {
+      "affirm": 3,
+      "greet": 1,
+      "thankyou": 1
+    }
+  },
+  "cust_give_cmnd_all": {
+    "precision": 1.0,
+    "recall": 0.9333333333333333,
+    "f1-score": 0.9655172413793104,
+    "support": 30,
+    "confused_with": {
+      "cust_give_account_number_all": 2
+    }
+  },
+  "deny": {
+    "precision": 0.5,
+    "recall": 0.5,
+    "f1-score": 0.5,
+    "support": 8,
+    "confused_with": {
+      "transfer_to_account": 1,
+      "greet": 1
+    }
+  },
+  "cust_create_account_for_themselvess": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "cust_sign_in": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "transfer_to_account": {
+    "precision": 0.8888888888888888,
+    "recall": 1.0,
+    "f1-score": 0.9411764705882353,
+    "support": 8,
+    "confused_with": {}
+  },
+  "check_loan_max": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 33,
+    "confused_with": {}
+  },
+  "ask_exchange_rate": {
+    "precision": 0.9428571428571428,
+    "recall": 1.0,
+    "f1-score": 0.9705882352941176,
+    "support": 33,
+    "confused_with": {}
+  },
+  "accuracy": 0.8955223880597015,
+  "macro avg": {
+    "precision": 0.7942688685957916,
+    "recall": 0.8173268617347565,
+    "f1-score": 0.8050193860773474,
+    "support": 402
+  },
+  "weighted avg": {
+    "precision": 0.8731666200944808,
+    "recall": 0.8955223880597015,
+    "f1-score": 0.8835858747111007,
+    "support": 402
+  }
+}

@@ -6,10 +6,10 @@ pipeline:
 # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
-   - name: "DucklingHTTPExtractor"
-     url: "http://localhost:8000"
-     locale: "vi_VI"
-     dimensions: ["time", "number","numeral"]
+#   - name: "DucklingHTTPExtractor"
+#     url: "http://localhost:8000"
+#     locale: "vi_VI"
+#     dimensions: ["time"]
    - name: WhitespaceTokenizer
    - name: RegexFeaturizer
    - name: LexicalSyntacticFeaturizer
@@ -28,7 +28,7 @@ pipeline:
      constrain_similarities: true
      model_confidence: linear_norm
    - name: FallbackClassifier
-     threshold: 0.3
+     threshold: 0.1
      ambiguity_threshold: 0.1
 
 # Configuration for Rasa Core.

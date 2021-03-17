@@ -19,6 +19,8 @@ nlu:
     - Bạn ơi cho mình hỏi
     - em ơi, cho anh hỏi
     - em ơi, cho chị hỏi
+    - xin chào
+    - xin chào !
 - intent: goodbye
   examples: |
     - good afternoon
@@ -56,6 +58,7 @@ nlu:
     - cảm ơn
     - thank you so much
     - great! Thanks
+    - Cảm ơn em
 - intent: deny
   examples: |
     - no
@@ -118,6 +121,10 @@ nlu:
     - tôi muốn [tạo tài khoản]{"entity": "service_name", "value": "l\u1eadp t\u00e0i kho\u1ea3n"}
     - [anh](cust_sex) muốn [lập tài khoản](service_name)
     - [anh](cust_sex) muốn [lập tài khoane](service_name)
+    - a muốn [lập tài khoản](service_name)
+    - [lập acc](service_name)
+    - [tạo tài khoản]{"entity": "service_name", "value": "l\u1eadp t\u00e0i kho\u1ea3n"}
+    - dang ky tai [khoan](service_name)
 - intent: check_balance_account
   examples: |
     - [Chị](cust_sex) muốn [check số dư tài khoản](service_name)
@@ -146,6 +153,7 @@ nlu:
     - [cô](cust_sex) muốn [xem số dư tài khoản]{"entity": "service_name", "value": "check s\u1ed1 d\u01b0 t\u00e0i kho\u1ea3n"}
     - [anh](cust_sex) muốn [xem số dư tài khoản]{"entity": "service_name", "value": "check s\u1ed1 d\u01b0 t\u00e0i kho\u1ea3n"}
     - [anh](cust_sex) muốn [check số dư tài khoản](service_name)
+    - A muốn [xem số dư tài khoản]{"entity": "service_name", "value": "check s\u1ed1 d\u01b0 t\u00e0i kho\u1ea3n"}
 - intent: transfer_to_account
   examples: |
     - [Chị](cust_sex) muốn [chuyển khoản](service_name)
@@ -235,15 +243,26 @@ nlu:
     - 2 + 2 bằng bao nhiêu
     - Who's the US President?
     - em bao nhiểu tuổi
+    - mèo méo meo
 - intent: ask_time
   examples: |
     - bây giờ là mấy giờ ?
+    - ngày bao nhiêu
+    - may gio roi
 - intent: hello_word
   examples: |
     - test action
 - intent: stop
   examples: |
     - Dừng
+    - thôi
+    - thôi không làm nữa
+    - dừng
+    - thôi dừng
+    - thôi được rồi
+    - thế thôi
+    - hết rồi
+    - thoi
 - intent: cust_give_account_number_all
   examples: |
     - số tài khoản của [anh](cust_sex) là [9876](cust_account_number)
@@ -264,38 +283,46 @@ nlu:
     - [9760](cust_account_number)
     - số tài khoản là [5723](cust_account_number)
     - [5723](cust_account_number)
+    - [6871](cust_account_number)
+    - [094352798](cust_account_number)
 - intent: cust_give_cmnd_all
   examples: |
     - số cmnd của [anh](cust_sex) là [9876543210](cmnd)
     - số cmnd của [Em](cust_sex) là [1472583690](cmnd)
     - số cmnd của tôi là [1472583690](cmnd)
-    - số cmnd của [chị](cust_sex) là [7418529630](cmnd)
-    - số cmnd của [bác](cust_sex) là [014774123](cmnd)
-    - số cmnd của [chú](cust_sex) là [201417896](cmnd)
-    - số cmnd của [cô](cust_sex) là [1236987405](cmnd)
+    - số cmt của [chị](cust_sex) là [7418529630](cmnd)
+    - số cmnd [bác](cust_sex) đây [014774123](cmnd)
+    - số cmt của [chú](cust_sex) là [201417896](cmnd)
+    - số cmnd của [cô](cust_sex) đây [1236987405](cmnd)
     - số cmnd của mình(cust_sex) là [1236987405](cmnd)
     - số cmnd là [1236987405](cmnd)
-    - số cmnd là [1597532580](cmnd)
+    - số cmt là [1597532580](cmnd)
     - số cmnd là [3577411598](cmnd)
     - số cmnd của người đấy là [1234567890](cmnd)
     - số cmnd của [anh ấy](others_person_sex) là [9876543210](cmnd)
-    - số cmnd của em ấy là [1472583690](cmnd)
-    - số cmnd của [chị ấy](others_person_sex) là [7418529630](cmnd)
+    - số cmt của em ấy là [1472583690](cmnd)
+    - số cmnd của [chị ấy](others_person_sex) [7418529630](cmnd)
     - số cmnd của nó là [9874563210](cmnd)
     - số cmnd của [bác ấy](others_person_sex) là [014774123](cmnd)
-    - số cmnd của [chú ấy](others_person_sex) là [201417896](cmnd)
+    - cmt của [chú ấy](others_person_sex) là [201417896](cmnd)
     - số cmnd của [cô ấy](others_person_sex) là [1236987405](cmnd)
-    - số cmnd của [bạn đấy](others_person_sex) là [1236987405](cmnd)
+    - cmt của [bạn đấy](others_person_sex) [1236987405](cmnd)
     - [1234567890](cmnd)
     - [014774123](cmnd)
     - [201417896](cmnd)
     - số cmnd là [0123654147](cmnd)
-    - số cmnd là [1233214565](cmnd)
+    - cmnd là [1233214565](cmnd)
     - số cmnd [5555555555](cmnd)
     - số cmnd [4445556665](cmnd)
     - số cmnd là [123123123](cmnd)
-    - số cmnd là [1114445556](cmnd)
+    - số cmt là [1114445556](cmnd)
     - [1114445556](cmnd)
+    - [020036885](cust_account_number)
+    - số cmnd [020036885](cmnd)
+    - cmt [091234567](cmnd)
+    - cmnd la [029248756](cmnd)
+    - [012345678](cust_account_number)
+    - so cmnd la [091234567](cmnd)
 - intent: cust_give_name_all
   examples: |
     - [Chị](cust_sex) tên là [nguyễn thị thu huyền](name)
@@ -347,6 +374,17 @@ nlu:
     - tên là [nguyễn quý hiếu](name)
     - tên [trần hán hiếu](name)
     - [lê đức thắng](name)
+    - [nguyễn anh đức](name)
+    - [Dương Thanh Hải](name)
+    - [Nguyễn Hữu Thắng](name)
+    - [lê thắng](name)
+    - [lê đức nam](name)
+    - [Lê Văn Tám](name)
+    - [Lê văn Tám](name)
+    - [đào việt anh](name)
+    - [nguyen](name) [phan minh](name)
+    - [nguyen minh duc](name)
+    - [duc](name) [nguyen](name)
 - intent: ask_service_name
   examples: |
     - có những dịch vụ gì nhỉ
@@ -366,6 +404,11 @@ nlu:
     - cho [cô](cust_sex) xem danh sách dịch vụ
     - có những dịch vụ gì
     - cho tôi xem dịch vụ
+    - hỏi dịch vụ
+    - co dich vu nao
+    - Bên em có những dịch vụ gì
+    - dich vu
+    - hoi dich vu
 - intent: ask_bot_name
   examples: |
     - bạn tên là gì?
@@ -405,6 +448,16 @@ nlu:
     - [100](number) [bgp](currency_from) được bao nhiêu [yên nhật](currency_to)
     - [5](number) [đô](currency_from) bằng bao nhiêu [vnd](currency_to)
     - [2](number) [đô](currency_from) bằng bao nhiêu
+    - [1000](number) yên bằng bao nhiêu
+    - [1](number) [bgp](currency_from) bằng bao nhiêu [đô](currency_to)
+    - [10](number) [usd](currency_from) bằng bao nhiêu
+    - [10](number) [usd](currency_from) bằng bao nhiêu [vnd](currency_to)
+    - [10](number) [usd](currency_from) bằng bao nhiêu vndType a message
+    - [1](number) [đô](currency_from) la bằng bao nhiêu tiền
+    - [1](number) [đô](currency_from) là bằng bao nhiêu tiền [việt](currency_to)
+    - giá vàng hôm nay
+    - [1](number) [đô](currency_from) la giá bao nhiêu
+    - [21](number) [đô la](currency) sang tiền việt
 - intent: cust_create_account_for_themselvess
   examples: |
     - [anh](cust_sex) muốn tạo tài khoản cho bản thân
@@ -414,6 +467,7 @@ nlu:
     - [cô](cust_sex) muốn tạo tài khoản cho bản thân
     - Quý khách muốn tạo tài khoản cho bản thân
     - [1](number): [anh](cust_sex) muốn tạo tài khoản cho bản thân
+    - cho bản thân
 - intent: cust_create_account_for_others_person
   examples: |
     - [anh](cust_sex) muốn tạo tài khoản cho người khác
@@ -433,6 +487,19 @@ nlu:
     - [em](cust_sex) muốn [đăng nhập tài khoản](service_name)
     - tôi muốn [đăng nhập tài khoản](service_name)
     - mình muốn [đăng nhập tài khoản](service_name)
+    - [a](cust_sex) muốn [đăng ký tài khoản](service_name)
+- intent: cust_give_others_person_name
+  examples: |
+    - tên người đấy là [nguyễn đăng dương](others_person_name)
+- intent: nlu_fallback
+  examples: |
+    - tôi muốn [đăng nhập](service_name)
+- intent: ask_phone_number
+  examples: |
+    - sđt là gì
+- intent: ask_address
+  examples: |
+    - ở chỗ nào
 - synonym: lập tài khoản
   examples: |
     - tạo tài khoản
@@ -445,15 +512,18 @@ nlu:
     - biết hạn mức vay
     - xem hạn mức vay
     - Xem khoản vay tối đa
+- regex: cmnd
+  examples: |
+    - \d{9,12}
 - regex: cust_account_number
   examples: |
-    - \d{10,12}
-- regex: cust_cmnd
-  examples: |
-    - \d{10,12}
+    - \d{8,12,13,14}
 - regex: cust_transfer_account_number
   examples: |
     - \d{10,12}
+- regex: name
+  examples: |
+    - [A-EGHIK-VXYÂĐỔÔÚỨa-eghik-vxyàáâãèéêìíòóôõùúýỳỹỷỵựửữừứưụủũợởỡờớơộổỗồốọỏịỉĩệểễềếẹẻẽặẳẵằắăậẩẫầấạảđ₫]
 - regex: others_person_cmnd
   examples: |
-    - \d{10,12}
+    - \d{9,12}

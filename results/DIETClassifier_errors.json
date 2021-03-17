@@ -1,0 +1,2003 @@
+[
+  {
+    "text": "em \u01a1i, cho anh h\u1ecfi",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "cust_sex",
+        "start": 11,
+        "end": 14,
+        "confidence_entity": 0.9795589447021484,
+        "value": "anh",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "em \u01a1i, cho ch\u1ecb h\u1ecfi",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "cust_sex",
+        "start": 11,
+        "end": 14,
+        "confidence_entity": 0.997956395149231,
+        "value": "ch\u1ecb",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "\u0111\u1ed3ng \u00fd",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "name",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.6550654768943787,
+        "value": "\u0111\u1ed3ng \u00fd",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "anh mu\u1ed1n l\u1eadp t\u00e0i khoane",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "anh",
+        "entity": "cust_sex"
+      },
+      {
+        "start": 9,
+        "end": 23,
+        "value": "l\u1eadp t\u00e0i khoane",
+        "entity": "service_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cust_sex",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.7730563282966614,
+        "value": "anh",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "service_name",
+        "start": 9,
+        "end": 12,
+        "confidence_entity": 0.9895311594009399,
+        "value": "l\u1eadp",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "service_name",
+        "start": 17,
+        "end": 23,
+        "confidence_entity": 0.9388806819915771,
+        "value": "khoane",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "t\u1ea1o t\u00e0i kho\u1ea3n",
+    "entities": [
+      {
+        "start": 0,
+        "end": 13,
+        "value": "l\u1eadp t\u00e0i kho\u1ea3n",
+        "entity": "service_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "service_name",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.8221160173416138,
+        "value": "t\u1ea1o",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "service_name",
+        "start": 8,
+        "end": 13,
+        "confidence_entity": 0.9739741086959839,
+        "value": "kho\u1ea3n",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "A mu\u1ed1n xem s\u1ed1 d\u01b0 t\u00e0i kho\u1ea3n",
+    "entities": [
+      {
+        "start": 7,
+        "end": 26,
+        "value": "check s\u1ed1 d\u01b0 t\u00e0i kho\u1ea3n",
+        "entity": "service_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cust_sex",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.988419771194458,
+        "value": "A",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "service_name",
+        "start": 7,
+        "end": 26,
+        "confidence_entity": 0.9988773465156555,
+        "value": "check s\u1ed1 d\u01b0 t\u00e0i kho\u1ea3n",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Ch\u1ecb mu\u1ed1n chuy\u1ec3n kho\u1ea3n100000",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "Ch\u1ecb",
+        "entity": "cust_sex"
+      },
+      {
+        "start": 9,
+        "end": 21,
+        "value": "chuy\u1ec3n kho\u1ea3n",
+        "entity": "service_name"
+      },
+      {
+        "start": 21,
+        "end": 27,
+        "value": "100000",
+        "entity": "cust_transfer_account_money"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cust_sex",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.9998156428337097,
+        "value": "Ch\u1ecb",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "b\u00e1c \u1ea5y t\u00ean l\u00e0 nguy\u1ec5n \u0111\u0103ng d\u01b0\u01a1ng",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "b\u00e1c \u1ea5y",
+        "entity": "others_person_sex"
+      },
+      {
+        "start": 14,
+        "end": 31,
+        "value": "nguy\u1ec5n \u0111\u0103ng d\u01b0\u01a1ng",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cust_sex",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.7303926944732666,
+        "value": "b\u00e1c \u1ea5y",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "name",
+        "start": 14,
+        "end": 31,
+        "confidence_entity": 0.9867236018180847,
+        "value": "nguy\u1ec5n \u0111\u0103ng d\u01b0\u01a1ng",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "m\u1ed9t \u0111\u00f4 b\u1eb1ng bao nhi\u00eau ti\u1ec1n",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "m\u1ed9t",
+        "entity": "number"
+      },
+      {
+        "start": 4,
+        "end": 6,
+        "value": "\u0111\u00f4",
+        "entity": "currency_from"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "currency_from",
+        "start": 4,
+        "end": 6,
+        "confidence_entity": 0.9968841671943665,
+        "value": "\u0111\u00f4",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "\u0111\u1ed5i ti\u1ec1n \u0111\u00f4 sang y\u00ean",
+    "entities": [
+      {
+        "start": 4,
+        "end": 11,
+        "value": "ti\u1ec1n \u0111\u00f4",
+        "entity": "currency_from"
+      },
+      {
+        "start": 17,
+        "end": 20,
+        "value": "y\u00ean",
+        "entity": "currency_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "currency_to",
+        "start": 4,
+        "end": 8,
+        "confidence_entity": 0.8534008860588074,
+        "value": "ti\u1ec1n",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 9,
+        "end": 11,
+        "confidence_entity": 0.9731562733650208,
+        "value": "\u0111\u00f4",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_to",
+        "start": 17,
+        "end": 20,
+        "confidence_entity": 0.6458008289337158,
+        "value": "y\u00ean",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "t\u1ec9 gi\u00e1 \u0111\u1ed3ng b\u1ea3ng anh",
+    "entities": [
+      {
+        "start": 12,
+        "end": 20,
+        "value": "b\u1ea3ng anh",
+        "entity": "currency_from"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cust_sex",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.4723871350288391,
+        "value": "t\u1ec9",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 7,
+        "end": 11,
+        "confidence_entity": 0.29588016867637634,
+        "value": "\u0111\u1ed3ng",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_to",
+        "start": 12,
+        "end": 20,
+        "confidence_entity": 0.66,
+        "value": "b\u1ea3ng anh",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "t\u1ec9 gi\u00e1 \u0111\u1ed3ng cny",
+    "entities": [
+      {
+        "start": 12,
+        "end": 15,
+        "value": "cny",
+        "entity": "currency_from"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "currency_from",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.3681281507015228,
+        "value": "t\u1ec9",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 7,
+        "end": 11,
+        "confidence_entity": 0.27718523144721985,
+        "value": "\u0111\u1ed3ng",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_to",
+        "start": 12,
+        "end": 15,
+        "confidence_entity": 0.9811996221542358,
+        "value": "cny",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "\u0111\u1ed5i \u0111\u00f4 la m\u1ef9 sang ti\u1ec1n vi\u1ec7t \u0111i",
+    "entities": [
+      {
+        "start": 4,
+        "end": 12,
+        "value": "\u0111\u00f4 la m\u1ef9",
+        "entity": "currency_from"
+      },
+      {
+        "start": 18,
+        "end": 27,
+        "value": "ti\u1ec1n vi\u1ec7t",
+        "entity": "currency_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "currency_from",
+        "start": 4,
+        "end": 6,
+        "confidence_entity": 0.9888373613357544,
+        "value": "\u0111\u00f4",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_to",
+        "start": 18,
+        "end": 27,
+        "confidence_entity": 0.598157525062561,
+        "value": "ti\u1ec1n vi\u1ec7t",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "21 \u0111\u00f4 la sang ti\u1ec1n vi\u1ec7t",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "21",
+        "entity": "number"
+      },
+      {
+        "start": 3,
+        "end": 8,
+        "value": "\u0111\u00f4 la",
+        "entity": "currency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.9988123178482056,
+        "value": "21",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 3,
+        "end": 5,
+        "confidence_entity": 0.993769109249115,
+        "value": "\u0111\u00f4",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_to",
+        "start": 14,
+        "end": 23,
+        "confidence_entity": 0.6030082702636719,
+        "value": "ti\u1ec1n vi\u1ec7t",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "hi",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "name",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.8949379920959473,
+        "value": "hi",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Em mu\u1ed1n l\u1eadp t\u00e0i kho\u1ea3n",
+    "entities": [
+      {
+        "start": 8,
+        "end": 21,
+        "value": "l\u1eadp t\u00e0i kho\u1ea3n",
+        "entity": "service_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cust_sex",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.9013776779174805,
+        "value": "Em",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "service_name",
+        "start": 8,
+        "end": 21,
+        "confidence_entity": 0.9995236396789551,
+        "value": "l\u1eadp t\u00e0i kho\u1ea3n",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "l\u1eadp acc",
+    "entities": [
+      {
+        "start": 0,
+        "end": 7,
+        "value": "l\u1eadp acc",
+        "entity": "service_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "service_name",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.9967824220657349,
+        "value": "l\u1eadp",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Em mu\u1ed1n check s\u1ed1 d\u01b0 t\u00e0i kho\u1ea3n",
+    "entities": [
+      {
+        "start": 8,
+        "end": 29,
+        "value": "check s\u1ed1 d\u01b0 t\u00e0i kho\u1ea3n",
+        "entity": "service_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cust_sex",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.9862620234489441,
+        "value": "Em",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "service_name",
+        "start": 8,
+        "end": 29,
+        "confidence_entity": 0.9996618032455444,
+        "value": "check s\u1ed1 d\u01b0 t\u00e0i kho\u1ea3n",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Anh mu\u1ed1n chuy\u1ec3n kho\u1ea3n50000",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "Anh",
+        "entity": "cust_sex"
+      },
+      {
+        "start": 9,
+        "end": 21,
+        "value": "chuy\u1ec3n kho\u1ea3n",
+        "entity": "service_name"
+      },
+      {
+        "start": 21,
+        "end": 26,
+        "value": "50000",
+        "entity": "cust_transfer_account_money"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cust_sex",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.9983568787574768,
+        "value": "Anh",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "m\u00ecnh mu\u1ed1n chuy\u1ec3n kho\u1ea3n300000",
+    "entities": [
+      {
+        "start": 10,
+        "end": 22,
+        "value": "chuy\u1ec3n kho\u1ea3n",
+        "entity": "service_name"
+      },
+      {
+        "start": 22,
+        "end": 28,
+        "value": "300000",
+        "entity": "cust_transfer_account_money"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "2 + 2 b\u1eb1ng bao nhi\u00eau",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "number",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.9663203954696655,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "number",
+        "start": 4,
+        "end": 5,
+        "confidence_entity": 0.962611973285675,
+        "value": "2",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "s\u1ed1 cmnd c\u1ee7a b\u1ea1n \u0111\u1ea5y l\u00e0 1236987405",
+    "entities": [
+      {
+        "start": 12,
+        "end": 19,
+        "value": "b\u1ea1n \u0111\u1ea5y",
+        "entity": "others_person_sex"
+      },
+      {
+        "start": 23,
+        "end": 33,
+        "value": "1236987405",
+        "entity": "cmnd"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cmnd",
+        "start": 23,
+        "end": 33,
+        "confidence_entity": 0.9997971653938293,
+        "value": "1236987405",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "014774123",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "014774123",
+        "entity": "cmnd"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cust_account_number",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.9864745736122131,
+        "value": "014774123",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Anh t\u00ean l\u00e0 nguy\u1ec5n anh \u0111\u1ee9c",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "Anh",
+        "entity": "cust_sex"
+      },
+      {
+        "start": 11,
+        "end": 25,
+        "value": "nguy\u1ec5n anh \u0111\u1ee9c",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "name",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.4077765941619873,
+        "value": "Anh",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "name",
+        "start": 11,
+        "end": 25,
+        "confidence_entity": 0.9323976039886475,
+        "value": "nguy\u1ec5n anh \u0111\u1ee9c",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "10 b\u1ea3ng anh b\u1eb1ng bao nhi\u00eau cny",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "10",
+        "entity": "number"
+      },
+      {
+        "start": 3,
+        "end": 11,
+        "value": "b\u1ea3ng anh",
+        "entity": "currency_from"
+      },
+      {
+        "start": 27,
+        "end": 30,
+        "value": "cny",
+        "entity": "currency_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.9982351064682007,
+        "value": "10",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 3,
+        "end": 7,
+        "confidence_entity": 0.6610857248306274,
+        "value": "b\u1ea3ng",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "cust_sex",
+        "start": 8,
+        "end": 11,
+        "confidence_entity": 0.9879873991012573,
+        "value": "anh",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 27,
+        "end": 30,
+        "confidence_entity": 0.9960849285125732,
+        "value": "cny",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "t\u00f4i mu\u1ed1n \u0111\u1ed5i 300 b\u1ea3ng th\u00ec \u0111\u01b0\u1ee3c bao nhi\u00eau ti\u1ec1n",
+    "entities": [
+      {
+        "start": 13,
+        "end": 16,
+        "value": "300",
+        "entity": "number"
+      },
+      {
+        "start": 17,
+        "end": 21,
+        "value": "b\u1ea3ng",
+        "entity": "currency_from"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number",
+        "start": 13,
+        "end": 16,
+        "confidence_entity": 0.9273332357406616,
+        "value": "300",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 17,
+        "end": 25,
+        "confidence_entity": 0.64,
+        "value": "b\u1ea3ng th\u00ec",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "20 usd b\u1eb1ng bao nhi\u00eau b\u1ea3ng anh",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "20",
+        "entity": "number"
+      },
+      {
+        "start": 3,
+        "end": 6,
+        "value": "usd",
+        "entity": "currency_from"
+      },
+      {
+        "start": 22,
+        "end": 30,
+        "value": "b\u1ea3ng anh",
+        "entity": "currency_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.9991471767425537,
+        "value": "20",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 3,
+        "end": 6,
+        "confidence_entity": 0.9993170499801636,
+        "value": "usd",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 22,
+        "end": 26,
+        "confidence_entity": 0.7382681965827942,
+        "value": "b\u1ea3ng",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "cust_sex",
+        "start": 27,
+        "end": 30,
+        "confidence_entity": 0.5235214829444885,
+        "value": "anh",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "100000 vnd \u0111\u01b0\u1ee3c bao nhi\u00eau usd",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "100000",
+        "entity": "number"
+      },
+      {
+        "start": 7,
+        "end": 10,
+        "value": "vnd",
+        "entity": "currency_from"
+      },
+      {
+        "start": 26,
+        "end": 29,
+        "value": "usd",
+        "entity": "currency_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.9991620779037476,
+        "value": "100000",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 7,
+        "end": 10,
+        "confidence_entity": 0.9922811388969421,
+        "value": "vnd",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 26,
+        "end": 29,
+        "confidence_entity": 0.644194483757019,
+        "value": "usd",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "10 usd b\u1eb1ng bao nhi\u00eau vndType a message",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "10",
+        "entity": "number"
+      },
+      {
+        "start": 3,
+        "end": 6,
+        "value": "usd",
+        "entity": "currency_from"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.9993150234222412,
+        "value": "10",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 3,
+        "end": 6,
+        "confidence_entity": 0.9993181228637695,
+        "value": "usd",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 22,
+        "end": 29,
+        "confidence_entity": 0.7501325011253357,
+        "value": "vndType",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "gi\u00e1 v\u00e0ng h\u00f4m nay",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "currency_from",
+        "start": 4,
+        "end": 16,
+        "confidence_entity": 0.5560620427131653,
+        "value": "v\u00e0ng h\u00f4m nay",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "khong",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "service_name",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.5918046832084656,
+        "value": "khong",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ch\u00fa mu\u1ed1n chuy\u1ec3n kho\u1ea3n70000",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "ch\u00fa",
+        "entity": "cust_sex"
+      },
+      {
+        "start": 9,
+        "end": 21,
+        "value": "chuy\u1ec3n kho\u1ea3n",
+        "entity": "service_name"
+      },
+      {
+        "start": 21,
+        "end": 26,
+        "value": "70000",
+        "entity": "cust_transfer_account_money"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cust_sex",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.9993845224380493,
+        "value": "ch\u00fa",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "b\u00e1c mu\u1ed1n chuy\u1ec3n kho\u1ea3n5000",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "b\u00e1c",
+        "entity": "cust_sex"
+      },
+      {
+        "start": 9,
+        "end": 21,
+        "value": "chuy\u1ec3n kho\u1ea3n",
+        "entity": "service_name"
+      },
+      {
+        "start": 21,
+        "end": 25,
+        "value": "5000",
+        "entity": "cust_transfer_account_money"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cust_sex",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.9996471405029297,
+        "value": "b\u00e1c",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "201417896",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "201417896",
+        "entity": "cmnd"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cust_account_number",
+        "start": 0,
+        "end": 9,
+        "confidence_entity": 0.9385271072387695,
+        "value": "201417896",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Em t\u00ean l\u00e0 v\u0169 qu\u1ed1c huy",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "Em",
+        "entity": "cust_sex"
+      },
+      {
+        "start": 10,
+        "end": 21,
+        "value": "v\u0169 qu\u1ed1c huy",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "name",
+        "start": 10,
+        "end": 21,
+        "confidence_entity": 0.9332551956176758,
+        "value": "v\u0169 qu\u1ed1c huy",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "h\u1ed3 qu\u00fd ly",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "h\u1ed3 qu\u00fd ly",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "name",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.9943496584892273,
+        "value": "h\u1ed3",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "t\u00ean b\u1ea1n \u0111\u1ea5y l\u00e0 v\u0169 th\u1ecb ngoan",
+    "entities": [
+      {
+        "start": 15,
+        "end": 27,
+        "value": "v\u0169 th\u1ecb ngoan",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "others_person_sex",
+        "start": 4,
+        "end": 11,
+        "confidence_entity": 0.992723286151886,
+        "value": "b\u1ea1n \u0111\u1ea5y",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "name",
+        "start": 15,
+        "end": 27,
+        "confidence_entity": 0.9596522450447083,
+        "value": "v\u0169 th\u1ecb ngoan",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ch\u00edn m\u01b0\u01a1i euro b\u1eb1ng bao nhi\u00eau ti\u1ec1n vnd",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "ch\u00edn m\u01b0\u01a1i",
+        "entity": "number"
+      },
+      {
+        "start": 10,
+        "end": 14,
+        "value": "euro",
+        "entity": "currency_from"
+      },
+      {
+        "start": 35,
+        "end": 38,
+        "value": "vnd",
+        "entity": "currency"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "currency_to",
+        "start": 35,
+        "end": 38,
+        "confidence_entity": 0.9773916006088257,
+        "value": "vnd",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "10 usd = ? bgp",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "10",
+        "entity": "number"
+      },
+      {
+        "start": 3,
+        "end": 6,
+        "value": "usd",
+        "entity": "currency_from"
+      },
+      {
+        "start": 11,
+        "end": 14,
+        "value": "bgp",
+        "entity": "currency_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.9982911944389343,
+        "value": "10",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 3,
+        "end": 6,
+        "confidence_entity": 0.9780660271644592,
+        "value": "usd",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 11,
+        "end": 14,
+        "confidence_entity": 0.5439009666442871,
+        "value": "bgp",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "30000 vnd = ? y\u00ean nh\u1eadt",
+    "entities": [
+      {
+        "start": 0,
+        "end": 5,
+        "value": "30000",
+        "entity": "number"
+      },
+      {
+        "start": 6,
+        "end": 9,
+        "value": "vnd",
+        "entity": "currency_from"
+      },
+      {
+        "start": 14,
+        "end": 22,
+        "value": "y\u00ean nh\u1eadt",
+        "entity": "currency_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.9978075623512268,
+        "value": "30000",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_to",
+        "start": 6,
+        "end": 9,
+        "confidence_entity": 0.7416654229164124,
+        "value": "vnd",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_to",
+        "start": 14,
+        "end": 22,
+        "confidence_entity": 0.6563487648963928,
+        "value": "y\u00ean nh\u1eadt",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "1 \u0111\u00f4 l\u00e0 b\u1eb1ng bao nhi\u00eau ti\u1ec1n vi\u1ec7t",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "1",
+        "entity": "number"
+      },
+      {
+        "start": 2,
+        "end": 4,
+        "value": "\u0111\u00f4",
+        "entity": "currency_from"
+      },
+      {
+        "start": 28,
+        "end": 32,
+        "value": "vi\u1ec7t",
+        "entity": "currency_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.9986586570739746,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 2,
+        "end": 4,
+        "confidence_entity": 0.9768717885017395,
+        "value": "\u0111\u00f4",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Anh mu\u1ed1n t\u1ea1o t\u00e0i kho\u1ea3n",
+    "entities": [
+      {
+        "start": 9,
+        "end": 22,
+        "value": "l\u1eadp t\u00e0i kho\u1ea3n",
+        "entity": "service_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cust_sex",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.9875280261039734,
+        "value": "Anh",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "service_name",
+        "start": 9,
+        "end": 22,
+        "confidence_entity": 0.9994101524353027,
+        "value": "l\u1eadp t\u00e0i kho\u1ea3n",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Em mu\u1ed1n chuy\u1ec3n kho\u1ea3n30000",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "Em",
+        "entity": "cust_sex"
+      },
+      {
+        "start": 8,
+        "end": 20,
+        "value": "chuy\u1ec3n kho\u1ea3n",
+        "entity": "service_name"
+      },
+      {
+        "start": 20,
+        "end": 25,
+        "value": "30000",
+        "entity": "cust_transfer_account_money"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cust_sex",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.8598672747612,
+        "value": "Em",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "t\u00f4i mu\u1ed1n chuy\u1ec3n kho\u1ea3n400000",
+    "entities": [
+      {
+        "start": 9,
+        "end": 21,
+        "value": "chuy\u1ec3n kho\u1ea3n",
+        "entity": "service_name"
+      },
+      {
+        "start": 21,
+        "end": 27,
+        "value": "400000",
+        "entity": "cust_transfer_account_money"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Em mu\u1ed1n check h\u1ea1n m\u1ee9c vay",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "Em",
+        "entity": "cust_sex"
+      },
+      {
+        "start": 8,
+        "end": 25,
+        "value": "check h\u1ea1n m\u1ee9c vay",
+        "entity": "service_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "service_name",
+        "start": 8,
+        "end": 25,
+        "confidence_entity": 0.9995506405830383,
+        "value": "check h\u1ea1n m\u1ee9c vay",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "s\u1ed1 cmnd c\u1ee7a em \u1ea5y l\u00e0 1472583690",
+    "entities": [
+      {
+        "start": 21,
+        "end": 31,
+        "value": "1472583690",
+        "entity": "cmnd"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "others_person_sex",
+        "start": 12,
+        "end": 17,
+        "confidence_entity": 0.9983648657798767,
+        "value": "em \u1ea5y",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "cmnd",
+        "start": 21,
+        "end": 31,
+        "confidence_entity": 0.9989985823631287,
+        "value": "1472583690",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ho\u00e0ng th\u00f9y linh",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "ho\u00e0ng th\u00f9y linh",
+        "entity": "cust_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "name",
+        "start": 0,
+        "end": 15,
+        "confidence_entity": 0.9980162382125854,
+        "value": "ho\u00e0ng th\u00f9y linh",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "anh \u1ea5y t\u00ean l\u00e0 B\u00f9i Ho\u00e0ng Vi\u1ec7t Anh",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "anh \u1ea5y",
+        "entity": "others_person_sex"
+      },
+      {
+        "start": 14,
+        "end": 32,
+        "value": "B\u00f9i Ho\u00e0ng Vi\u1ec7t Anh",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "others_person_sex",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.7233514189720154,
+        "value": "anh \u1ea5y",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "name",
+        "start": 14,
+        "end": 17,
+        "confidence_entity": 0.9377947449684143,
+        "value": "B\u00f9i",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "name",
+        "start": 18,
+        "end": 28,
+        "confidence_entity": 0.66,
+        "value": "Ho\u00e0ng Vi\u1ec7t",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "others_person_sex",
+        "start": 29,
+        "end": 32,
+        "confidence_entity": 0.3185310959815979,
+        "value": "Anh",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "ch\u00fa \u1ea5y t\u00ean l\u00e0 ho\u00e0ng nam",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "ch\u00fa \u1ea5y",
+        "entity": "others_person_sex"
+      },
+      {
+        "start": 14,
+        "end": 23,
+        "value": "ho\u00e0ng nam",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "others_person_sex",
+        "start": 0,
+        "end": 6,
+        "confidence_entity": 0.9922246932983398,
+        "value": "ch\u00fa \u1ea5y",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "name",
+        "start": 14,
+        "end": 19,
+        "confidence_entity": 0.9979506134986877,
+        "value": "ho\u00e0ng",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "con \u1ea5y t\u00ean l\u00e0 l\u00ea th\u1ebf s\u1ef1",
+    "entities": [
+      {
+        "start": 14,
+        "end": 23,
+        "value": "l\u00ea th\u1ebf s\u1ef1",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "others_person_sex",
+        "start": 4,
+        "end": 6,
+        "confidence_entity": 0.9929742813110352,
+        "value": "\u1ea5y",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "name",
+        "start": 14,
+        "end": 23,
+        "confidence_entity": 0.6668142676353455,
+        "value": "l\u00ea th\u1ebf s\u1ef1",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "t\u00ean anh \u1ea5y l\u00e0 Phan V\u0103n T\u00e0i Em",
+    "entities": [
+      {
+        "start": 4,
+        "end": 10,
+        "value": "anh \u1ea5y",
+        "entity": "others_person_sex"
+      },
+      {
+        "start": 14,
+        "end": 29,
+        "value": "Phan V\u0103n T\u00e0i Em",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "others_person_sex",
+        "start": 4,
+        "end": 10,
+        "confidence_entity": 0.6271016001701355,
+        "value": "anh \u1ea5y",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "name",
+        "start": 14,
+        "end": 22,
+        "confidence_entity": 0.967121422290802,
+        "value": "Phan V\u0103n",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "others_person_sex",
+        "start": 27,
+        "end": 29,
+        "confidence_entity": 0.9495802521705627,
+        "value": "Em",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "\u0111\u1ed5i y\u00ean nh\u1eadt sang ti\u1ec1n vi\u1ec7t",
+    "entities": [
+      {
+        "start": 4,
+        "end": 12,
+        "value": "y\u00ean nh\u1eadt",
+        "entity": "currency_from"
+      },
+      {
+        "start": 18,
+        "end": 27,
+        "value": "ti\u1ec1n vi\u1ec7t",
+        "entity": "currency_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "currency_to",
+        "start": 4,
+        "end": 12,
+        "confidence_entity": 0.61,
+        "value": "y\u00ean nh\u1eadt",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_to",
+        "start": 18,
+        "end": 27,
+        "confidence_entity": 0.7286789417266846,
+        "value": "ti\u1ec1n vi\u1ec7t",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "\u0111\u1ed5i nh\u00e2n d\u00e2n t\u1ec7 sang vnd \u0111i",
+    "entities": [
+      {
+        "start": 4,
+        "end": 15,
+        "value": "nh\u00e2n d\u00e2n t\u1ec7",
+        "entity": "currency_from"
+      },
+      {
+        "start": 21,
+        "end": 24,
+        "value": "vnd",
+        "entity": "currency_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "service_name",
+        "start": 13,
+        "end": 15,
+        "confidence_entity": 0.5081512331962585,
+        "value": "t\u1ec7",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_to",
+        "start": 21,
+        "end": 24,
+        "confidence_entity": 0.6674862504005432,
+        "value": "vnd",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "1 \u0111\u00f4 la b\u1eb1ng bao nhi\u00eau ti\u1ec1n",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "1",
+        "entity": "number"
+      },
+      {
+        "start": 2,
+        "end": 4,
+        "value": "\u0111\u00f4",
+        "entity": "currency_from"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.9987784028053284,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 2,
+        "end": 7,
+        "confidence_entity": 0.6803075671195984,
+        "value": "\u0111\u00f4 la",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "1 \u0111\u00f4 la gi\u00e1 bao nhi\u00eau",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "1",
+        "entity": "number"
+      },
+      {
+        "start": 2,
+        "end": 4,
+        "value": "\u0111\u00f4",
+        "entity": "currency_from"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.9985488057136536,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 2,
+        "end": 7,
+        "confidence_entity": 0.6752292513847351,
+        "value": "\u0111\u00f4 la",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "a mu\u1ed1n \u0111\u0103ng k\u00fd t\u00e0i kho\u1ea3n",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "a",
+        "entity": "cust_sex"
+      },
+      {
+        "start": 7,
+        "end": 24,
+        "value": "\u0111\u0103ng k\u00fd t\u00e0i kho\u1ea3n",
+        "entity": "service_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "service_name",
+        "start": 7,
+        "end": 24,
+        "confidence_entity": 0.8764142990112305,
+        "value": "\u0111\u0103ng k\u00fd t\u00e0i kho\u1ea3n",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "Em mu\u1ed1n t\u1ea1o t\u00e0i kho\u1ea3n",
+    "entities": [
+      {
+        "start": 8,
+        "end": 21,
+        "value": "l\u1eadp t\u00e0i kho\u1ea3n",
+        "entity": "service_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cust_sex",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.5194635391235352,
+        "value": "Em",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "service_name",
+        "start": 8,
+        "end": 21,
+        "confidence_entity": 0.9995712637901306,
+        "value": "l\u1eadp t\u00e0i kho\u1ea3n",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "c\u00f4 mu\u1ed1n chuy\u1ec3n kho\u1ea3n1000000",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "c\u00f4",
+        "entity": "cust_sex"
+      },
+      {
+        "start": 8,
+        "end": 20,
+        "value": "chuy\u1ec3n kho\u1ea3n",
+        "entity": "service_name"
+      },
+      {
+        "start": 20,
+        "end": 27,
+        "value": "1000000",
+        "entity": "cust_transfer_account_money"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "cust_sex",
+        "start": 0,
+        "end": 2,
+        "confidence_entity": 0.9983612895011902,
+        "value": "c\u00f4",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "th\u1eb1ng \u1ea5y t\u00ean l\u00e0 nguy\u1ec5n v\u0103n phong",
+    "entities": [
+      {
+        "start": 16,
+        "end": 32,
+        "value": "nguy\u1ec5n v\u0103n phong",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "others_person_sex",
+        "start": 6,
+        "end": 8,
+        "confidence_entity": 0.9708011150360107,
+        "value": "\u1ea5y",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "name",
+        "start": 16,
+        "end": 32,
+        "confidence_entity": 0.9977426528930664,
+        "value": "nguy\u1ec5n v\u0103n phong",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "D\u01b0\u01a1ng Thanh H\u1ea3i",
+    "entities": [
+      {
+        "start": 0,
+        "end": 15,
+        "value": "D\u01b0\u01a1ng Thanh H\u1ea3i",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "name",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.5475537180900574,
+        "value": "D\u01b0\u01a1ng",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "100 \u20ac = ? ti\u1ec1n vi\u1ec7t",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "100",
+        "entity": "number"
+      },
+      {
+        "start": 4,
+        "end": 5,
+        "value": "\u20ac",
+        "entity": "currency_from"
+      },
+      {
+        "start": 10,
+        "end": 19,
+        "value": "ti\u1ec1n vi\u1ec7t",
+        "entity": "currency_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.9948792457580566,
+        "value": "100",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "1000 y\u00ean b\u1eb1ng bao nhi\u00eau",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "1000",
+        "entity": "number"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.999046266078949,
+        "value": "1000",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_from",
+        "start": 5,
+        "end": 8,
+        "confidence_entity": 0.5996084809303284,
+        "value": "y\u00ean",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "1 bgp b\u1eb1ng bao nhi\u00eau \u0111\u00f4",
+    "entities": [
+      {
+        "start": 0,
+        "end": 1,
+        "value": "1",
+        "entity": "number"
+      },
+      {
+        "start": 2,
+        "end": 5,
+        "value": "bgp",
+        "entity": "currency_from"
+      },
+      {
+        "start": 21,
+        "end": 23,
+        "value": "\u0111\u00f4",
+        "entity": "currency_to"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "number",
+        "start": 0,
+        "end": 1,
+        "confidence_entity": 0.9991534948348999,
+        "value": "1",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_to",
+        "start": 2,
+        "end": 5,
+        "confidence_entity": 0.6319557428359985,
+        "value": "bgp",
+        "extractor": "DIETClassifier"
+      },
+      {
+        "entity": "currency_to",
+        "start": 21,
+        "end": 23,
+        "confidence_entity": 0.6957005262374878,
+        "value": "\u0111\u00f4",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

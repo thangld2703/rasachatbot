@@ -105,6 +105,7 @@ class ActionCreateAccountSubmit(Action):
         dispatcher.utter_message("{} đã tạo tài khoản thành công".format(tracker.get_slot("cust_sex")))
         dispatcher.utter_message("số tài khoản của bạn là {}".format(account_number))
         cust_name = tracker.get_slot("name")
+        print(cust_name)
         cust_name = list(cust_name.split(" "))
         # return_slots = []
         # return_slots.append(SlotSet("cust_name", tracker.get_slot('name')))
@@ -355,7 +356,7 @@ class ActionCheckAccount(Action):
 
 class ValidateCustCreateAccount(FormValidationAction):
     def name(self) -> Text:
-        return "validate_cust_create_account_form"
+        return "validate_cust_create_account"
 
     def validate_name(self,slot_value: Any,dispatcher: CollectingDispatcher,tracker: Tracker,domain: DomainDict,) -> Dict[Text, Any]:
         if slot_value != None:
@@ -364,11 +365,17 @@ class ValidateCustCreateAccount(FormValidationAction):
             return {"name": None}
 
     def validate_cmnd(self,slot_value: Any,dispatcher: CollectingDispatcher,tracker: Tracker,domain: DomainDict,) -> Dict[Text, Any]:
-        if slot_value == None or len(slot_value) >= 10 or len(slot_value) < 10:
-            dispatcher.utter_message(text=f"Quý khách đã nhập sai định dạng cmnd.")
-            return {"cmnd": None}
+        if slot_value != None:
+            if len(slot_value) == 9 or len(slot_value) == 12:
+                print(len(slot_value))
+                return {"cmnd": slot_value}
+            else:
+                dispatcher.utter_message(text=f"Số cmnd không hợp lệ. Quý khách vui lòng kiểm tra lại ạ.")
+                return {"cmnd": None}
         else:
-            return {"cmnd": slot_value}
+            dispatcher.utter_message(text=f"Số cmnd không hợp lệ. Quý khách vui lòng kiểm tra lại ạ.")
+            return {"cmnd": None}
+
 
 class ValidateCustSignIn(FormValidationAction):
     def name(self) -> Text:
@@ -381,15 +388,18 @@ class ValidateCustSignIn(FormValidationAction):
             return {"name": None}
 
     def validate_cmnd(self,slot_value: Any,dispatcher: CollectingDispatcher,tracker: Tracker,domain: DomainDict,) -> Dict[Text, Any]:
-        if slot_value == None or len(slot_value) != 10:
-            dispatcher.utter_message(text=f"Quý khách đã nhập sai định dạng số cmnd.")
+        if slot_value == None:
+            dispatcher.utter_message(text=f"Số cmnd không hợp lệ. Quý khách vui lòng kiểm tra lại ạ.")
+            return {"cmnd": None}
+        elif len(slot_value) != 12 and len(slot_value) != 9:
+            dispatcher.utter_message(text=f"Số cmnd không hợp lệ. Quý khách vui lòng kiểm tra lại ạ.")
             return {"cmnd": None}
         else:
             return {"cmnd": slot_value}
 
     def validate_cust_account_number(self,slot_value: Any,dispatcher: CollectingDispatcher,tracker: Tracker,domain: DomainDict,) -> Dict[Text, Any]:
-        if slot_value == None or len(slot_value) >= 5 or len(slot_value) < 4:
-            dispatcher.utter_message(text=f"Quý khách đã nhập sai định dạng số tài khoản.")
+        if slot_value == None or len(slot_value) >= 15 or len(slot_value) < 8:
+            dispatcher.utter_message(text=f"số tài khoản không hợp lệ. Quý khách vui lòng kiểm tra lại ạ.")
             return {"cust_account_number": None}
         else:
             return {"cust_account_number": slot_value}

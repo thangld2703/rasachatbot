@@ -1,0 +1,338 @@
+[
+  {
+    "text": "B\u1ea1n \u01a1i cho m\u00ecnh h\u1ecfi",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "ask_service_name",
+      "confidence": 0.2630336582660675
+    }
+  },
+  {
+    "text": "em \u01a1i, cho anh h\u1ecfi",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "ask_service_name",
+      "confidence": 0.25811895728111267
+    }
+  },
+  {
+    "text": "em \u01a1i, cho ch\u1ecb h\u1ecfi",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "ask_service_name",
+      "confidence": 0.27231481671333313
+    }
+  },
+  {
+    "text": "good afternoon",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.45876434445381165
+    }
+  },
+  {
+    "text": "have a nice day",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.2145329713821411
+    }
+  },
+  {
+    "text": "\u0111\u1ed3ng \u00fd",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "cust_give_name_all",
+      "confidence": 0.5670551061630249
+    }
+  },
+  {
+    "text": "wonderful",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.2161112278699875
+    }
+  },
+  {
+    "text": "not good",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.17082417011260986
+    }
+  },
+  {
+    "text": "I want to order food",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.20445387065410614
+    }
+  },
+  {
+    "text": "hi",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.23762628436088562
+    }
+  },
+  {
+    "text": "good afternoon",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.2966925799846649
+    }
+  },
+  {
+    "text": "cu",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.1566683053970337
+    }
+  },
+  {
+    "text": "ch\u1ed1t",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.17990674078464508
+    }
+  },
+  {
+    "text": "ok",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.20386910438537598
+    }
+  },
+  {
+    "text": "good job",
+    "intent": "thankyou",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.2564620077610016
+    }
+  },
+  {
+    "text": "tuy\u1ec7t v\u1eddi",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.2277141958475113
+    }
+  },
+  {
+    "text": "bored",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.2063373178243637
+    }
+  },
+  {
+    "text": "2 + 2 b\u1eb1ng bao nhi\u00eau",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_exchange_rate",
+      "confidence": 0.6092468500137329
+    }
+  },
+  {
+    "text": "014774123",
+    "intent": "cust_give_cmnd_all",
+    "intent_prediction": {
+      "name": "cust_give_account_number_all",
+      "confidence": 0.450790673494339
+    }
+  },
+  {
+    "text": "indeed",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.2426208257675171
+    }
+  },
+  {
+    "text": "that sounds good",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.19741959869861603
+    }
+  },
+  {
+    "text": "khong",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "transfer_to_account",
+      "confidence": 0.3066168427467346
+    }
+  },
+  {
+    "text": "perfect",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.23626407980918884
+    }
+  },
+  {
+    "text": "I don't feel very well",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.2247776836156845
+    }
+  },
+  {
+    "text": "bu\u1ed3n qu\u00e1",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.13224205374717712
+    }
+  },
+  {
+    "text": "m\u00e8o m\u00e9o meo",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.17774876952171326
+    }
+  },
+  {
+    "text": "201417896",
+    "intent": "cust_give_cmnd_all",
+    "intent_prediction": {
+      "name": "cust_give_account_number_all",
+      "confidence": 0.3204911947250366
+    }
+  },
+  {
+    "text": "yes",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.1617729216814041
+    }
+  },
+  {
+    "text": "\u0111\u00fang r\u1ed3i",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "affirm_has_account",
+      "confidence": 0.2668662667274475
+    }
+  },
+  {
+    "text": "n",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.1987801492214203
+    }
+  },
+  {
+    "text": "not really",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.38370847702026367
+    }
+  },
+  {
+    "text": "amazing",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.2510998845100403
+    }
+  },
+  {
+    "text": "Who's the US President?",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.26664671301841736
+    }
+  },
+  {
+    "text": "let's go",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.1272353082895279
+    }
+  },
+  {
+    "text": "good night",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.23111607134342194
+    }
+  },
+  {
+    "text": "y",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.16025269031524658
+    }
+  },
+  {
+    "text": "correct",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.15512646734714508
+    }
+  },
+  {
+    "text": "never",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.20903204381465912
+    }
+  },
+  {
+    "text": "great",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "thankyou",
+      "confidence": 0.23100128769874573
+    }
+  },
+  {
+    "text": "my day was horrible",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.2517528235912323
+    }
+  },
+  {
+    "text": "b\u1ea1n l\u00e0 chatbot \u00e0",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "ask_bot_name",
+      "confidence": 0.31451231241226196
+    }
+  },
+  {
+    "text": "em bao nhi\u1ec3u tu\u1ed5i",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_exchange_rate",
+      "confidence": 0.47610950469970703
+    }
+  }
+]

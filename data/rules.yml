@@ -17,67 +17,93 @@ rules:
   - intent: out_of_scope
   - action: utter_out_of_scope
 
+- rule: Trả lời số điện thoại ngân hàng
+  steps:
+    - intent: ask_phone_number
+    - action: utter_phone_number
+
+- rule: Trả lời địa chỉ ngân hàng
+  steps:
+    - intent: ask_address
+    - action: utter_show_address
+
+#- rule: Lấy số cmnd từ khách
+#  condition:
+#    # Condition that form is active.
+#    - active_loop: cust_create_account
+#  steps:
+#    - action: utter_ask_cust_cmnd
+#    - slot_was_set:
+#      - requested_slot: cmnd
+#    - or:
+#        - intent: cust_give_cmnd_all
+#        - intent: cust_give_account_number_all
+#    - slot_was_set:
+#        - cmnd: '4445556665'
+
+
+
 - rule: cust create account for themselvess
+  condition:
+    # Condition that form is active.
+    - active_loop: cust_create_account
   steps:
-  - intent: cust_create_account_for_themselvess
-  - action: cust_create_account
-  - active_loop: cust_create_account
-  - slot_was_set:
-    - requested_slot: name
-  - slot_was_set:
-    - name: Lê Đức thắng
-  - slot_was_set:
-    - requested_slot: cmnd
-  - slot_was_set:
-    - cmnd: 0976734190
-  - slot_was_set:
-    - requested_slot: null
-  - active_loop: null
-  - action: utter_ask_cust_to_verify_account
+    - intent: cust_create_account_for_themselvess
+    - action: action_reset_account
+    - action: cust_create_account
+    - active_loop: cust_create_account
+    - slot_was_set:
+        - requested_slot: name
+    - slot_was_set:
+        - name: Lê Đức thắng
+    - slot_was_set:
+        - requested_slot: cmnd
+    - slot_was_set:
+        - cmnd: 976734190
 
-- rule: cust affirm create account for others person
-  steps:
-  - action: utter_ask_cust_to_verify_others_person_account
-  - intent: affirm
-  - action: action_create_account_for_others_person_submit
-  - action: action_reset_name
-  - action: action_reset_cmnd
-  - action: utter_ask_if_cust_want_to_do_anything_else
-
-- rule: cust affirm create account for themselves
-  steps:
-  - action: utter_ask_cust_to_verify_account
-  - intent: affirm
-  - action: action_create_account_submit
-  - action: action_reset_name
-  - action: action_reset_cmnd
-  - action: utter_ask_if_cust_want_to_do_anything_else
-
-- rule: cust deny create account
-  steps:
-  - action: utter_ask_cust_to_verify_account
-  - intent: deny
-  - action: action_reset_name
-  - action: action_reset_cmnd
-  - action: utter_ask_if_cust_want_to_create_account_again
-
-- rule: cust create account for others person
-  steps:
-  - intent: cust_create_account_for_others_person
-  - action: cust_create_account_for_others_person
-  - active_loop: cust_create_account_for_others_person
-  - slot_was_set:
-      - requested_slot: name
-  - slot_was_set:
-      - name: Lê Đức thắng
-  - slot_was_set:
-      - requested_slot: cmnd
-  - slot_was_set:
-      - cmnd: 0976734190
-  - slot_was_set:
-      - requested_slot: null
-  - active_loop: null
-  - action: utter_ask_cust_to_verify_others_person_account
+#- rule: cust affirm create account for others person
+#  steps:
+#  - action: utter_ask_cust_to_verify_others_person_account
+#  - intent: affirm
+#  - action: action_create_account_for_others_person_submit
+#  - action: action_reset_name
+#  - action: action_reset_cmnd
+#  - action: utter_ask_if_cust_want_to_do_anything_else
+#
+#- rule: cust affirm create account for themselves
+#  steps:
+#  - action: utter_ask_cust_to_verify_account
+#  - intent: affirm
+#  - action: action_create_account_submit
+#  - action: action_reset_name
+#  - action: action_reset_cmnd
+#  - action: utter_ask_if_cust_want_to_do_anything_else
+#
+#- rule: cust deny create account
+#  steps:
+#  - action: utter_ask_cust_to_verify_account
+#  - intent: deny
+#  - action: action_reset_name
+#  - action: action_reset_cmnd
+#  - action: utter_ask_if_cust_want_to_create_account_again
+#
+#- rule: cust create account for others person
+#  steps:
+#  - intent: cust_create_account_for_others_person
+#  - action: cust_create_account_for_others_person
+#  - active_loop: cust_create_account_for_others_person
+#  - slot_was_set:
+#      - requested_slot: name
+#  - slot_was_set:
+#      - name: Lê Đức thắng
+#  - slot_was_set:
+#      - requested_slot: cmnd
+#  - slot_was_set:
+#      - cmnd: 0976734190
+#  - slot_was_set:
+#      - requested_slot: null
+#  - active_loop: null
+#  - action: utter_ask_cust_to_verify_others_person_account
 
 - rule: create account unhappy path
   condition:
@@ -98,9 +124,6 @@ rules:
       - requested_slot: cmnd
   - slot_was_set:
       - cmnd: 0976734190
-  - slot_was_set:
-      - requested_slot: null
-  - active_loop: null
 
 - rule: cust ask service name
   steps:
