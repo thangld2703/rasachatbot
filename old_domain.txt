@@ -3,6 +3,7 @@ session_config:
   session_expiration_time: 20
   carry_over_slots_to_new_session: false
 intents:
+- cust_give_number
 - ask_phone_number
 - ask_address
 - deny
@@ -287,8 +288,11 @@ forms:
       intent: cust_give_name_all
       type: from_entity
     cmnd:
-    - entity: cmnd
+    - entity: number
       intent: cust_give_cmnd_all
+      type: from_entity
+    - entity: number
+      intent: cust_give_number
       type: from_entity
   cust_create_account_for_others_person:
     name:
@@ -296,8 +300,11 @@ forms:
       intent: cust_give_name_all
       type: from_entity
     cmnd:
-    - entity: cmnd
+    - entity: number
       intent: cust_give_cmnd_all
+      type: from_entity
+    - entity: number
+      intent: cust_give_number
       type: from_entity
   cust_sign_in:
     name:
@@ -305,12 +312,18 @@ forms:
       intent: cust_give_name_all
       type: from_entity
     cmnd:
-    - entity: cmnd
+    - entity: number
       intent: cust_give_cmnd_all
       type: from_entity
+    - entity: number
+      intent: cust_give_number
+      type: from_entity
     cust_account_number:
-    - entity: cust_account_number
+    - entity: number
       intent: cust_give_account_number_all
+      type: from_entity
+    - entity: number
+      intent: cust_give_number
       type: from_entity
   cust_transfer_account:
     name:
@@ -318,7 +331,7 @@ forms:
       intent: cust_give_name_all
       type: from_entity
     cmnd:
-    - entity: cmnd
+    - entity: number
       intent: cust_give_cmnd_all
       type: from_entity
     cust_transfer_account_money:

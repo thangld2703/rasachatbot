@@ -12,7 +12,9 @@ from rasa_sdk.events import SlotSet
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
+from actions.vietnamese_correction import *
 import random
+import string
 import mysql.connector
 from rasa_sdk import Tracker, FormValidationAction
 
@@ -58,6 +60,11 @@ def CheckBalance(cust_name,cust_cmnd,account_number):
     mydb.commit()
     return balance[0]
 
+# Sửa chính tả cho tên
+def NameCorrect(s):
+    s = chuan_hoa_dau_cau_tieng_viet(s)
+    return  string.capwords(s)
+
 class ActionHelloWorld(Action):
 
     def name(self) -> Text:
@@ -99,11 +106,12 @@ class ActionCreateAccountSubmit(Action):
 
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        account_number = random.randint(1000, 9999);
+        # account_number = random.randint(100000000000, 999999999999);
+        account_number = 100000000000
         DataUpdate(tracker.get_slot("name"),
                    tracker.get_slot("cmnd"),account_number)
         dispatcher.utter_message("{} đã tạo tài khoản thành công".format(tracker.get_slot("cust_sex")))
-        dispatcher.utter_message("số tài khoản của bạn là {}".format(account_number))
+        dispatcher.utter_message("Số tài khoản của bạn là {}".format(account_number))
         cust_name = tracker.get_slot("name")
         print(cust_name)
         cust_name = list(cust_name.split(" "))
@@ -140,7 +148,7 @@ class ActionCreateAccountForOthersPesonSubmit(Action):
 
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        account_number = random.randint(1000, 9999);
+        account_number = random.randint(100000000000, 999999999999);
         DataUpdate(tracker.get_slot("name"),
                    tracker.get_slot("cmnd"),account_number)
         text = (
@@ -165,7 +173,7 @@ class ActionListServiceName(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         list_service = getServiceName()
         text = (
-            "Danh sách dịch vụ:"
+            "Gửi quý khách danh sách dịch vụ:"
         )
         count = 0;
         buttons = []
@@ -360,6 +368,7 @@ class ValidateCustCreateAccount(FormValidationAction):
 
     def validate_name(self,slot_value: Any,dispatcher: CollectingDispatcher,tracker: Tracker,domain: DomainDict,) -> Dict[Text, Any]:
         if slot_value != None:
+            slot_value = NameCorrect(slot_value)
             return {"name": slot_value}
         else:
             return {"name": None}
@@ -383,6 +392,7 @@ class ValidateCustSignIn(FormValidationAction):
 
     def validate_name(self,slot_value: Any,dispatcher: CollectingDispatcher,tracker: Tracker,domain: DomainDict,) -> Dict[Text, Any]:
         if slot_value != None:
+            slot_value = NameCorrect(slot_value)
             return {"name": slot_value}
         else:
             return {"name": None}

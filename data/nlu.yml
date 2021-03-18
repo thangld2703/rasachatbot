@@ -21,6 +21,13 @@ nlu:
     - em ơi, cho chị hỏi
     - xin chào
     - xin chào !
+    - xinn chào
+    - có ai ko
+    - có ai ở đây không
+    - is there anyone
+    - anyone here
+    - chào
+    - có ai không
 - intent: goodbye
   examples: |
     - good afternoon
@@ -276,9 +283,7 @@ nlu:
     - số tài khoản là [1236](number)
     - số tài khoản là [1597](number)
     - số tài khoản là [3577](number)
-
     - số tài khoản là [5723](number)
-
 - intent: cust_give_number
   examples: |
     - [1234](number)
@@ -295,6 +300,9 @@ nlu:
     - [1114445556](number)
     - [020036885](number)
     - [012345678](number)
+    - [000946652392](number)
+    - [9382](number)
+    - [00946652392](number)
 - intent: cust_give_cmnd_all
   examples: |
     - số cmnd của [anh](cust_sex) là [9876543210](number)
@@ -317,19 +325,17 @@ nlu:
     - cmt của [chú ấy](others_person_sex) là [201417896](number)
     - số cmnd của [cô ấy](others_person_sex) là [1236987405](number)
     - cmt của [bạn đấy](others_person_sex) [1236987405](number)
-
     - số cmnd là [0123654147](number)
     - cmnd là [1233214565](number)
     - số cmnd [5555555555](number)
     - số cmnd [4445556665](number)
     - số cmnd là [123123123](number)
     - số cmt là [1114445556](number)
-
     - số cmnd [020036885](number)
     - cmt [091234567](number)
     - cmnd la [029248756](number)
-
     - so cmnd la [091234567](number)
+    - cmnd [091234567](cmnd)
 - intent: cust_give_name_all
   examples: |
     - [Chị](cust_sex) tên là [nguyễn thị thu huyền](name)
@@ -392,6 +398,7 @@ nlu:
     - [nguyen](name) [phan minh](name)
     - [nguyen minh duc](name)
     - [duc](name) [nguyen](name)
+    - [Nguyễn Minh Đức](name)
 - intent: ask_service_name
   examples: |
     - có những dịch vụ gì nhỉ
@@ -416,6 +423,8 @@ nlu:
     - Bên em có những dịch vụ gì
     - dich vu
     - hoi dich vu
+    - tôi muốn hỏi dịch vụ
+    - xem dịch vụ
 - intent: ask_bot_name
   examples: |
     - bạn tên là gì?
@@ -430,6 +439,7 @@ nlu:
     - cậu là ai thế
     - chị tên là gì nhỉ
     - tên cậu là gì?
+    - bạn tên là gì
 - intent: ask_exchange_rate
   examples: |
     - [chín mươi](number) [euro](currency_from) bằng bao nhiêu tiền [vnd](currency)

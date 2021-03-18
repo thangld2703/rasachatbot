@@ -704,7 +704,6 @@ stories:
     entities:
     - cust_account_number: '094352798'
   - action: utter_greet
-
 - story: interactive_story_1
   steps:
   - intent: ask_service_name
@@ -767,14 +766,12 @@ stories:
   - action: utter_ask_if_cust_want_to_do_anything_else
   - intent: stop
   - action: utter_happy
-
 - story: interactive_story_2
   steps:
   - intent: cust_give_cmnd_all
     entities:
     - cust_account_number: '123456789'
   - action: utter_greet
-
 - story: interactive_story_1
   steps:
   - intent: ask_service_name
@@ -808,7 +805,6 @@ stories:
     - requested_slot: cmnd
   - intent: stop
   - action: utter_cust_stop_create_account
-
 - story: interactive_story_1
   steps:
   - intent: ask_service_name
@@ -886,10 +882,60 @@ stories:
   - action: utter_ask_if_cust_want_to_do_anything_else
   - intent: stop
   - action: utter_happy
-
 - story: interactive_story_1
   steps:
   - intent: ask_phone_number
   - action: utter_phone_number
   - intent: ask_address
   - action: utter_show_address
+- story: Story from Conversation ID 6d301e59fe574ade9bbde630cd8e08fe
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_service_name
+  - action: action_list_service_name
+  - intent: create_account
+  - action: utter_ask_who_cust_create_account_for
+  - intent: cust_create_account_for_themselvess
+  - action: action_reset_account
+  - slot_was_set:
+    - cust_name: null
+  - slot_was_set:
+    - cust_cmnd: null
+  - slot_was_set:
+    - cust_account_number: null
+  - slot_was_set:
+    - name: null
+  - slot_was_set:
+    - cmnd: null
+  - action: cust_create_account
+  - active_loop: cust_create_account
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: Nguyễn Minh Đức
+  - slot_was_set:
+    - name: Nguyễn Minh Đức
+  - slot_was_set:
+    - requested_slot: cmnd
+  - slot_was_set:
+    - number: '000946652392'
+  - slot_was_set:
+    - cmnd: '000946652392'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_ask_cust_to_verify_account
+  - intent: affirm
+  - action: action_create_account_submit
+  - slot_was_set:
+    - cust_name: Nguyễn Minh Đức
+  - slot_was_set:
+    - cust_cmnd: '000946652392'
+  - slot_was_set:
+    - cust_account_number: 9382
+  - slot_was_set:
+    - cust_sex: Quý khách
+  - action: utter_ask_if_cust_want_to_do_anything_else
+  - intent: stop
+  - action: utter_happy
