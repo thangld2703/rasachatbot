@@ -19,6 +19,7 @@ nlu:
     - Bạn ơi cho mình hỏi
     - em ơi, cho anh hỏi
     - em ơi, cho chị hỏi
+    - xin chào
 - intent: goodbye
   examples: |
     - good afternoon
@@ -66,6 +67,7 @@ nlu:
     - no way
     - not really
     - khong
+    - khong can
 - intent: mood_great
   examples: |
     - perfect
@@ -118,6 +120,7 @@ nlu:
     - tôi muốn [tạo tài khoản]{"entity": "service_name", "value": "l\u1eadp t\u00e0i kho\u1ea3n"}
     - [anh](cust_sex) muốn [lập tài khoản](service_name)
     - [anh](cust_sex) muốn [lập tài khoane](service_name)
+    - lap tai khoan
 - intent: check_balance_account
   examples: |
     - [Chị](cust_sex) muốn [check số dư tài khoản](service_name)
@@ -238,6 +241,8 @@ nlu:
 - intent: ask_time
   examples: |
     - bây giờ là mấy giờ ?
+    - bay gio [la](currency_from) may gio
+    - may gio
 - intent: hello_word
   examples: |
     - test action
@@ -366,6 +371,10 @@ nlu:
     - cho [cô](cust_sex) xem danh sách dịch vụ
     - có những dịch vụ gì
     - cho tôi xem dịch vụ
+    - [Bên](cust_sex) [anh](cust_sex) muốn đăng ký dịch vụ
+    - xem dịch vụ
+    - hoi dich vu
+    - co nhung dich vu gi
 - intent: ask_bot_name
   examples: |
     - bạn tên là gì?
@@ -405,6 +414,7 @@ nlu:
     - [100](number) [bgp](currency_from) được bao nhiêu [yên nhật](currency_to)
     - [5](number) [đô](currency_from) bằng bao nhiêu [vnd](currency_to)
     - [2](number) [đô](currency_from) bằng bao nhiêu
+    - đổi [đô la mỹ](currency_from) sang [tiền việt](currency_to)
 - intent: cust_create_account_for_themselvess
   examples: |
     - [anh](cust_sex) muốn tạo tài khoản cho bản thân
