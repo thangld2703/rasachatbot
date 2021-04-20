@@ -6,7 +6,7 @@
 
 
 # This is a simple example for a custom action which utters "Hello World!"
-from underthesea import pos_tag
+# from underthesea import pos_tag
 from typing import Any, Text, Dict, List
 from rasa_sdk.events import SlotSet
 from rasa_sdk import Action, Tracker
@@ -22,22 +22,27 @@ mydb = mysql.connector.connect(host="localhost", user="root", passwd="root", dat
 mycursor = mydb.cursor()
 
 def DataUpdate(cust_name,cust_cmnd,account_number):
-    # sql = 'CREATE TABLE customers (name VARCHAR(255), cmnd VARCHAR(255) , account_number VARCHAR(255),balance INT)'
+    # sql = 'CREATE TABLE accounts (name VARCHAR(255), cmnd VARCHAR(255) , account_number VARCHAR(255),balance INT)'
     balance = 10000000;
-    sql='INSERT INTO customers (name, cmnd, account_number,balance) VALUES ("{0}","{1}", "{2}","{3}");'.format(cust_name,cust_cmnd,account_number,balance)
+    sql='INSERT INTO accounts (full_name, id_card, account_number,balance) VALUES ("{0}","{1}", "{2}","{3}");'.format(cust_name,cust_cmnd,account_number,balance)
     mycursor.execute(sql)
     mydb.commit()
 
 def getServiceName():
-    # sql = 'CREATE TABLE customers (name VARCHAR(255), cmnd VARCHAR(255) , account_number VARCHAR(255),balance INT)'
+    # sql = 'CREATE TABLE accounts (name VARCHAR(255), cmnd VARCHAR(255) , account_number VARCHAR(255),balance INT)'
     sql='select name from service'
     mycursor.execute(sql)
     result = mycursor.fetchall();
     mydb.commit()
     return result
 
+def addServiceName(s):
+    sql = 'INSERT INTO service (name) VALUES ("{}");'.format(s)
+    mycursor.execute(sql)
+    mydb.commit()
+
 def CheckExist(cust_name,cust_cmnd,account_number):
-    sql='select COUNT(*) from customers where name = "{0}" and cmnd = "{1}" and account_number = "{2}";'.format(cust_name,cust_cmnd,account_number)
+    sql='select COUNT(*) from accounts where full_name = "{0}" and id_card = "{1}" and account_number = "{2}";'.format(cust_name,cust_cmnd,account_number)
     mycursor.execute(sql)
     count = mycursor.fetchone()
     print(count[0])
@@ -45,7 +50,7 @@ def CheckExist(cust_name,cust_cmnd,account_number):
     return count[0]
 
 def CheckAccountExist(cust_name,cust_cmnd):
-    sql='select COUNT(*) from customers where name = "{0}" and cmnd = "{1}" ";'.format(cust_name,cust_cmnd)
+    sql='select COUNT(*) from accounts where full_name = "{0}" and id_card = "{1}";'.format(cust_name,cust_cmnd)
     mycursor.execute(sql)
     count = mycursor.fetchone()
     print(count[0])
@@ -53,17 +58,33 @@ def CheckAccountExist(cust_name,cust_cmnd):
     return count[0]
 
 def CheckBalance(cust_name,cust_cmnd,account_number):
-    sql='select balance from customers where name = "{0}" and cmnd = "{1}" and account_number = "{2}";'.format(cust_name,cust_cmnd,account_number)
+    sql='select balance from accounts where full_name = "{0}" and id_card = "{1}" and account_number = "{2}";'.format(cust_name,cust_cmnd,account_number)
     print(sql)
     mycursor.execute(sql)
     balance = mycursor.fetchone()
     mydb.commit()
     return balance[0]
 
+def getBalance(account_number):
+    mycursor = mydb.cursor()
+    sql='select balance from accounts where account_number={}'.format(account_number)
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+
+    return myresult[0][0]
+
 # Sửa chính tả cho tên
 def NameCorrect(s):
     s = chuan_hoa_dau_cau_tieng_viet(s)
     return  string.capwords(s)
+
+def numOfAccounts():
+    mycursor = mydb.cursor()
+    sql='select count(*) from accounts '
+    mycursor.execute(sql)
+    myresult = mycursor.fetchone()
+
+    return myresult[0]
 
 class ActionHelloWorld(Action):
 
@@ -107,7 +128,8 @@ class ActionCreateAccountSubmit(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # account_number = random.randint(100000000000, 999999999999);
-        account_number = 100000000000
+        account_number = 100000000000 + numOfAccounts()
+
         DataUpdate(tracker.get_slot("name"),
                    tracker.get_slot("cmnd"),account_number)
         dispatcher.utter_message("{} đã tạo tài khoản thành công".format(tracker.get_slot("cust_sex")))
@@ -148,11 +170,12 @@ class ActionCreateAccountForOthersPesonSubmit(Action):
 
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        account_number = random.randint(100000000000, 999999999999);
+        # account_number = random.randint(100000000000, 999999999999)
+        account_number = 100000000000 + numOfAccounts()
         DataUpdate(tracker.get_slot("name"),
                    tracker.get_slot("cmnd"),account_number)
         text = (
-            "Bạn có muốn tiếp tục không ?"
+            "Quý khách có muốn tiếp tục không ?"
         )
         buttons = [
             {"payload": "/affirm", "title": "Yes"},
@@ -160,8 +183,8 @@ class ActionCreateAccountForOthersPesonSubmit(Action):
         ]
 
         dispatcher.utter_message(text=text, buttons=buttons)
-        dispatcher.utter_message("bạn đã tạo tài khoản cho {} thành công".format(tracker.get_slot("others_person_sex")))
-        dispatcher.utter_message("your account number is {}".format(account_number))
+        dispatcher.utter_message("Quý khách đã tạo tài khoản cho {} thành công".format(tracker.get_slot("others_person_sex")))
+        dispatcher.utter_message("Your account number is {}".format(account_number))
         return []
 
 class ActionListServiceName(Action):
@@ -362,58 +385,6 @@ class ActionCheckAccount(Action):
             else:
                 return [SlotSet("account", 'false')]
 
-class ValidateCustCreateAccount(FormValidationAction):
-    def name(self) -> Text:
-        return "validate_cust_create_account"
-
-    def validate_name(self,slot_value: Any,dispatcher: CollectingDispatcher,tracker: Tracker,domain: DomainDict,) -> Dict[Text, Any]:
-        if slot_value != None:
-            slot_value = NameCorrect(slot_value)
-            return {"name": slot_value}
-        else:
-            return {"name": None}
-
-    def validate_cmnd(self,slot_value: Any,dispatcher: CollectingDispatcher,tracker: Tracker,domain: DomainDict,) -> Dict[Text, Any]:
-        if slot_value != None:
-            if len(slot_value) == 9 or len(slot_value) == 12:
-                print(len(slot_value))
-                return {"cmnd": slot_value}
-            else:
-                dispatcher.utter_message(text=f"Số cmnd không hợp lệ. Quý khách vui lòng kiểm tra lại ạ.")
-                return {"cmnd": None}
-        else:
-            dispatcher.utter_message(text=f"Số cmnd không hợp lệ. Quý khách vui lòng kiểm tra lại ạ.")
-            return {"cmnd": None}
-
-
-class ValidateCustSignIn(FormValidationAction):
-    def name(self) -> Text:
-        return "validate_cust_sign_in"
-
-    def validate_name(self,slot_value: Any,dispatcher: CollectingDispatcher,tracker: Tracker,domain: DomainDict,) -> Dict[Text, Any]:
-        if slot_value != None:
-            slot_value = NameCorrect(slot_value)
-            return {"name": slot_value}
-        else:
-            return {"name": None}
-
-    def validate_cmnd(self,slot_value: Any,dispatcher: CollectingDispatcher,tracker: Tracker,domain: DomainDict,) -> Dict[Text, Any]:
-        if slot_value == None:
-            dispatcher.utter_message(text=f"Số cmnd không hợp lệ. Quý khách vui lòng kiểm tra lại ạ.")
-            return {"cmnd": None}
-        elif len(slot_value) != 12 and len(slot_value) != 9:
-            dispatcher.utter_message(text=f"Số cmnd không hợp lệ. Quý khách vui lòng kiểm tra lại ạ.")
-            return {"cmnd": None}
-        else:
-            return {"cmnd": slot_value}
-
-    def validate_cust_account_number(self,slot_value: Any,dispatcher: CollectingDispatcher,tracker: Tracker,domain: DomainDict,) -> Dict[Text, Any]:
-        if slot_value == None or len(slot_value) >= 15 or len(slot_value) < 8:
-            dispatcher.utter_message(text=f"số tài khoản không hợp lệ. Quý khách vui lòng kiểm tra lại ạ.")
-            return {"cust_account_number": None}
-        else:
-            return {"cust_account_number": slot_value}
-
 class ActionResetAccount(Action):
 
     def name(self):
@@ -456,4 +427,36 @@ class ActionLogin(Action):
         else:
             return [SlotSet("login", 'false')]
 
+class ActionCreditTransfer(Action):
+    def name(self) -> Text:
+        """Unique identifier of the form"""
+        return "action_transfer"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        count = CheckExist(tracker.get_slot('cust_account_number').lower(), tracker.get_slot('receive_transfer_account_number'), tracker.get_slot('credit'))
+
+        acc1 = tracker.get_slot('cust_account_number')
+        acc2 = tracker.get_slot('receive_transfer_account_number')
+        credit = tracker.get_slot('credit')
+        credit = int(credit)
+        if (getBalance(acc1) < (credit - 50000)):
+            dispatcher.utter_message(text=f"Số dư không đủ để thực hiện chuyển khoản.")
+        else:
+            newBalance1 = getBalance(acc1) - credit
+            newBalance2 = getBalance(acc1) + credit
+            mycursor = mydb.cursor()
+            mycursor.execute("UPDATE accounts SET balance = {} WHERE account_number = '{}';".format(newBalance1, acc1))
+            mycursor.execute("UPDATE accounts SET balance = {} WHERE account_number = '{}';".format(newBalance2, acc2))
+
+            mydb.commit()
+            dispatcher.utter_message(text=f"Chuyển khoản thành công!")
+
+# class ActionLogin(Action):
+#     def name(self) -> Text:
+#         """Unique identifier of the form"""
+#         return "action_draf"
+#
+#     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#
+#         email = tracker.get_slot('email')
 
